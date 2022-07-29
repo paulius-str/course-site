@@ -1,0 +1,80 @@
+.course-description-box ul {
+    columns: 2;
+    -webkit-columns: 2;
+    -moz-columns: 2;
+    list-style-type: circle;
+}
+
+.course-description-box{
+    margin: auto;
+    padding: 2rem;
+    border-style: solid;
+    border-color: rgba(0, 0, 0, 0.322);
+    border-width: 1px;
+    font-size: 2rem;
+    width: 90%;
+}
+
+.course-view h1{
+    margin: 1rem;
+    font-size: 2rem;
+    text-align: center;
+}
+
+.collapsible {
+    background-color: rgb(243, 243, 243);
+    cursor: pointer;
+    padding: 18px;
+    width: 100%;
+    border: none;
+    text-align: left;
+    outline: none;
+    font-size: 15px;
+  }
+  
+.active, .collapsible:hover {
+background-color: rgb(164, 164, 164);
+}
+
+.sections-container{
+    display: flex;
+    justify-content: center;
+    margin-bottom: 7rem;
+}
+
+.sections{
+    width: 90%;
+}
+
+.content-section {
+    padding: 0 0;
+    overflow: hidden;
+    background-color: #f1f1f1;
+}
+
+.content-section li{
+    margin: 2rem;
+    margin-left: 4rem;
+    font-size: 1.4rem;
+    overflow: hidden;
+    background-color: #f1f1f1;
+}
+
+.description-container{
+    display: flex;
+    justify-content: center;
+}
+
+.description{
+    width: 90%;
+    font-size: 2rem;
+    margin-bottom: 3rem;
+}
+
+.course-view .card-custom{
+    width: 90%;
+}
+
+.description-container .card-custom{
+    margin-bottom: 3rem;
+}

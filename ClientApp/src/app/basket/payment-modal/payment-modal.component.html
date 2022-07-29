@@ -1,0 +1,28 @@
+
+<div (click)="closeModal($event)" class="modal-backdrop">
+    <dialog class="modal-custom" id="login-modal" open="true">
+      <div class="center">
+        <h1>Select Payment Method</h1>
+      </div>
+      <div class="course-list">
+        <div class="course-item">
+            <h2 class="course-name">PayPal</h2>
+            <input class="course-price" type="radio" id="paypal" name="paymentMethod" value="paypal" checked/>
+        </div>
+      </div>
+      <div class="course-list">
+        <div class="course-item">
+            <h2 class="course-name">Stripe</h2>
+            <input class="course-price" type="radio" id="paypal" name="paymentMethod" value="paypal"/>
+        </div>
+      </div>
+      <div class="course-list">
+        <div class="course-item">
+            <h2 class="course-name">GooglePay</h2>
+            <input class="course-price" type="radio" id="paypal" name="paymentMethod" value="paypal"/>
+        </div>
+      </div>  
+      <button (click)="checkout()" class="btn-primary btn bottom-right">Checkout</button>
+      <button (click)="closeModalSimple()" class="btn-danger btn bottom-left">Cancel</button>
+    </dialog>
+  </div>

@@ -1,0 +1,57 @@
+<div class="edit-container">
+
+    <form #myForm="ngForm" (ngSubmit)="onSubmit(myForm)" method="post" name="signup">
+
+      <div class="txt_field center">
+          <label>Name:</label>
+          <input [(ngModel)]="course.name" type="text" name="name" placeholder="Name"
+          required #nameInput="ngModel" [class.invalid-input]="nameInput.invalid && (nameInput.dirty || myForm.submitted)">
+      </div>
+
+      <div class="txt_field center my-5">
+          <label>Price:</label>
+          <input [(ngModel)]="course.price" type="number" name="price" placeholder="Price">
+      </div>
+
+      <div class="txt_field center my-5">
+        <label>Category:</label>
+        <input [(ngModel)]="course.category" type="text" name="category" placeholder="Category"
+        required #categoryInput="ngModel" [class.invalid-input]="categoryInput.invalid && (categoryInput.dirty || myForm.submitted)">
+      </div>
+
+      <div class="txt_field center my-5">
+        <label>Short Description:</label>
+        <input [(ngModel)]="course.shortDescription" type="text" name="shortDescription" placeholder="Short Description"
+        required #shortDescriptionInput="ngModel" [class.invalid-input]="shortDescriptionInput.invalid && (shortDescriptionInput.dirty || myForm.submitted)">
+      </div>
+
+
+      <div class="center my-5">
+        <label class="">Description:</label>
+      </div>
+
+      <div class="NgxEditor__Wrapper" [class.invalid-input]="descriptionInput.invalid && (descriptionInput.dirty || myForm.submitted)">
+        <ngx-editor-menu [editor]="editor"> </ngx-editor-menu>
+        <ngx-editor
+          [editor]="editor"
+          name="articleContent"
+          [(ngModel)]="course.description"
+          [disabled]="false"
+          [placeholder]="'Type here...'"
+          required
+          #descriptionInput="ngModel"
+        ></ngx-editor>
+      </div>
+
+      <div class="txt_field center my-5" [class.invalid-input]="!fileIsValid() && (fileInputDirty || myForm.submitted)">
+        <label>Course Picture (PNG only):</label>
+        <input (change)="onFileSelected($event)" type="file" name="coursePicture" accept="image/png"
+        >
+      </div>
+
+      <div class="center mt-4">
+        <button type="submit" class="btn btn-primary btn-bottom">Create</button>
+      </div>
+  
+    </form>
+</div>

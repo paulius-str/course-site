@@ -1,0 +1,81 @@
+.card-custom {
+    display: flex;
+    position: relative;
+    height: 20rem;
+    width: 100%;
+    background: #fcfcfc;
+    margin: 0.2rem 0px;
+    transition: 0.4s all;
+    border-color: rgb(235, 235, 235);
+    border-style: solid;
+}
+
+.card-image{
+    height: 20rem;
+}
+
+.card-description{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 2rem;
+}
+
+.card-custom p{
+    padding: 2rem 0;
+    font-size: 1.6rem;
+}
+
+.card-rating{
+    width: 100%;
+    font-size: 1.8rem;
+    align-self: flex-start;
+}
+
+.card-bottom{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.btn-add-to-basket{
+    background-color: rgb(44, 72, 210);
+}
+
+
+
+.pagination {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: auto;
+    font-size: 1.65rem;
+}
+ 
+.pagination a {
+    margin: auto;
+    /* color: black; */
+    text-align: center;
+    float: left;
+    padding: 8px 16px;
+    text-decoration: none;
+}
+
+@media (max-width: 1600px) {
+    .card-custom {
+        display: flex;
+        position: relative;
+        flex-direction: column;
+        height: auto;
+        width: 100%;
+        background: #fcfcfc;
+        margin: 20px 0px;
+        transition: 0.4s all;
+    }
+    .card-image{
+      height: auto;
+    }
+    
+}
+

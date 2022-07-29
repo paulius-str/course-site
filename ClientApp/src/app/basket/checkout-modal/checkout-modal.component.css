@@ -1,0 +1,58 @@
+
+.basket {
+    width: 30rem;
+}
+
+.basket-element {
+    font-size: 20pt;
+    /* padding-left: 1.5rem;
+    margin-bottom: 2rem;
+    margin-top: 2rem; */
+}
+
+.btn-checkout {
+    width: 17rem;
+    height: 5rem;
+    font-size: 16pt;
+    margin: 2rem 20px;
+}
+
+.btn-primary {
+    background-color: #1688c5;
+}
+
+.bottom-right {
+    position: absolute;
+    bottom: 1.5rem;
+    right: 1.5rem;
+    width: 10rem;
+}
+
+.bottom-left {
+    position: absolute;
+    bottom: 1.5rem;
+    left: 1.5rem;
+    width: 10rem;
+}
+
+.course-list {
+    margin-top: 2rem;
+    margin-left: 2rem;
+    margin-right: 2rem;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+}
+  
+.course-item {
+    display: contents;
+    font-size: 10pt;
+}
+
+.course-price {
+    text-align: right;
+}
+
+.course-total {
+    margin-top: 30px;
+}

@@ -1,0 +1,21 @@
+<div class="container">
+    <div class="mb-5">
+        <app-question [question]="question" [open]="true"></app-question>
+    </div>
+    <div class="" *ngFor="let answer of answers">
+        <app-answer [answer]="answer"></app-answer>
+    </div>   
+    <div class="center">
+        <form>
+            <div class="my-3 mx-3">
+                <div class="txt_field center my-5">
+                    <label>Your Answer:</label>
+                    <input [(ngModel)]="newAnswer.text" type="text" name="answer" placeholder="Your Answer">
+                </div>
+                <button (click)="createAnswer()" type="submit" class="btn btn-primary btn-bottom mt-5">Write Answer</button>        
+            </div>                       
+        </form>     
+    </div>
+</div>
+
+

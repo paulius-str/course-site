@@ -1,0 +1,48 @@
+@import "~bootstrap/dist/css/bootstrap.css";
+
+a.navbar-brand {
+  white-space: normal;
+  text-align: center;
+  word-break: break-all;
+}
+
+html {
+  font-size: 14px;
+}
+@media (min-width: 768px) {
+  html {
+    font-size: 16px;
+  }
+}
+
+.box-shadow {
+  box-shadow: 0 .25rem .75rem rgba(0, 0, 0, .05);
+}
+
+.btn-primary{
+  width: 22rem;
+  height: 6rem;
+  font-size: large;
+}
+
+.btn-secondary{
+  width: 22rem;
+  height: 6rem;
+  font-size: large;
+}
+
+.dropdown-top{
+  width: 22rem;
+  height: 8rem;
+  font-size: large;
+}
+
+.btn-card {
+  width: 5rem;
+  height: 5rem;
+  margin-right: 1rem;
+}
+
+.btn-primary {
+  background-color: #1688c5;
+}

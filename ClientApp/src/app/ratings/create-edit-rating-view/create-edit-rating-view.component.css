@@ -1,0 +1,53 @@
+
+
+textarea {
+    width: 100%;
+    height: 150px;
+    padding: 12px 20px;
+    box-sizing: border-box;
+    border: 2px solid #ccc;
+    border-radius: 4px;
+    background-color: #f8f8f8;
+    font-size: 16px;
+    resize: none;
+  }
+
+.card-custom {
+    font-size: 18pt;
+}
+
+.text-success {
+    color: aquamarine;
+}
+
+.course-progress {
+    font-size: 18pt;
+}
+
+.center {
+    margin: auto;
+    width: 100%;
+}
+
+.text-green {
+    color: aquamarine;
+    text-shadow: rgb(0, 0, 0) 0.25px 0 1px;
+}
+
+.center {
+  text-align: center;
+}
+
+.edit-container {
+  font-size: 16pt;
+}
+
+.btn-bottom {
+  font-size: 16pt;
+  width: 17rem;
+  height: 5rem;
+}
+
+.sections {
+  width: 100%;
+}

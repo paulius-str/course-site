@@ -1,0 +1,17 @@
+<div class="card-custom" [class.my-question]="question.userId == authService.appUser?.id">
+  <div  class="question-container">
+    <div class="first-column">
+      <div class="img">
+        <img src="./assets/img/user.png" alt="">
+      </div>
+      <div class="username bottom">
+        <strong>{{username}}</strong>
+      </div>     
+    </div>
+    <div class="second-column">
+      <h1 (click)="openQuestion()" class="title">{{question.title}}</h1>
+      <p class="question-text">{{question.text}}</p>
+      <button *ngIf="!open" (click)="openQuestion()" routerLink="/question" class="bottom-right btn-secondary btn">View Answers</button>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,44 @@
+<header>
+  <header class="header">
+    <a routerLink="/">
+      <img class="logo" alt="Site logo" src="./assets/img/logo_new.png" />
+    </a>
+
+    <div class="main-nav">
+      <ul class="main-nav-list">
+        <button *ngIf="authService.appUser == null" routerLink="/login" class="btn btn-primary">Login</button>
+        <button *ngIf="authService.appUser == null" routerLink="/signup" class="btn btn-secondary">Sign Up</button>
+      </ul>
+
+      <div *ngIf="authService.appUser != null" class="row">
+        <div class="main-nav-list">
+
+          <div *ngIf="this.router.url !== 'checkout'">
+            <div *ngIf="basketService.getItems().length > 0" >
+              <div ngbDropdown>
+                <img class="btn-card" *ngIf="basketService.getItems().length > 0" src="./assets/img/basket.png" alt="af" ngbDropdownToggle/>
+              
+                <div ngbDropdownMenu aria-labelledby="dropdownBasic1">
+                    <app-basket></app-basket>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div ngbDropdown class="d-inline-block">
+            <button type="button" class="btn btn-secondary" id="dropdownBasic1" ngbDropdownToggle>
+              Welcome, {{getUserName()}}
+            </button>
+            <div ngbDropdownMenu aria-labelledby="dropdownBasic1" class="dropdown-top">
+              <button routerLink="/courses" ngbDropdownItem>My Courses</button>
+              <button *ngIf="!authService.appUser?.isPublisher" (click)="authService.becomePublisher()" ngbDropdownItem>Become Publisher</button>
+              <button *ngIf="authService.appUser?.isPublisher" routerLink="publisher/courses" ngbDropdownItem>Published Courses</button>
+              <button (click)="authService.logout()" ngbDropdownItem>Logout</button>
+            </div>
+          </div>
+        </div>         
+      </div>
+    </div>
+
+  </header>
+</header>

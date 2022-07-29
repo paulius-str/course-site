@@ -1,0 +1,65 @@
+.my-rating {
+    border: 0.2rem;
+    border-style: solid;
+    border-color: #b9b9b9;
+}
+
+.rating-container {
+    min-height: 15rem;
+    min-width: 100%;
+    display: grid;
+    grid-template-columns: 20% 4fr;
+    gap: 0px; 
+}
+  
+.card-custom {
+    width: 100%;
+    height: auto;
+    margin-top: 1rem;
+}
+
+.first-column {
+    background-color: #cecccc;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+}
+  
+.img img {
+    width: 100%;
+    height: auto;
+    max-width: 100%;
+}
+
+.second-column {
+    padding-left: 2rem;
+    background-color: #f0f0f0;
+}
+
+.second-column p {
+    font-size: 15pt;
+}
+
+.bottom-right {
+    font-size: 18pt;
+    position: absolute;
+    bottom: 0.5rem;
+    right: 0.5rem;
+    padding: 5px;
+}
+
+.username {
+    font-size: 15pt;
+    text-align: center;
+}
+
+.bottom {
+    margin-top: auto;
+    align-self: center;
+    padding: 5px;
+    margin-bottom: 0.6rem;
+    max-width: 100%;
+    word-wrap: break-word;
+} 

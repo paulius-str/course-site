@@ -1,0 +1,21 @@
+<div class="card-custom">
+  <img class="card-image" src="{{getImageUrl()}}" alt="">
+  <div class="card-description">
+    <h1>
+      <a *ngIf="!editMode" routerLink="/course" (click)="coursesService.selectCourse(course)">{{course.name}}</a>
+      <a *ngIf="editMode" routerLink="/course-edit" (click)="coursesService.selectCourse(course)">{{course.name}}</a>
+    </h1>
+    <p>{{course.shortDescription}}</p>
+    <div class="card-rating">
+      <div class="card-bottom">
+        <div *ngIf="averageRating?.averageScore !== null">
+          Rating: <strong>{{averageRating?.averageScore}}/5</strong>
+        </div> 
+        <div>
+          <button *ngIf="!owned && authService.appUser && showBasket" (click)="addToBasket()" class="btn btn-navbar btn-add-to-basket bottom-right">{{course.price}}$</button>
+        </div> 
+      </div>
+    </div>
+    <h2></h2>
+  </div>
+</div>

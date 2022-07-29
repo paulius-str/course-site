@@ -1,0 +1,40 @@
+<div class="edit-container">
+  <form method="post">
+
+    <div class="txt_field center">
+      <label>Element Name:</label>
+      <input [(ngModel)]="elementContent.courseElement.name" type="text" name="name" placeholder="Name">
+    </div>
+
+    <div class="txt_field center my-5">
+      <label>Content Length Minutes:</label>
+      <input [(ngModel)]="elementContent.courseElement.length" type="number" name="length" placeholder="Length">
+    </div>
+
+    <div class="txt_field center my-5">
+      <label>Video Url:</label>
+      <input [(ngModel)]="elementContent.videoContent.videoUrl" type="text" name="video-url" placeholder="Video Url">
+    </div>
+
+    <div class="center my-5">
+      <label>Article:</label>
+    </div>
+
+    <div class="NgxEditor__Wrapper">
+      <ngx-editor-menu [editor]="editor"> </ngx-editor-menu>
+      <ngx-editor
+        [editor]="editor"
+        name="articleContent"
+        [(ngModel)]="elementContent.articleContent.text"
+        [disabled]="false"
+        [placeholder]="'Type here...'"
+      ></ngx-editor>
+    </div>
+
+    <div class="center mt-5">
+      <button (click)="addOrEditElement()" type="submit" class="btn btn-primary mx-1 btn-bottom" style="width: 90px;">Edit</button>
+      <button routerLink="/course-edit" class="btn btn-primary mx-1 btn-bottom" style="width: 90px;">Cancel</button>
+    </div>
+
+  </form>
+</div>

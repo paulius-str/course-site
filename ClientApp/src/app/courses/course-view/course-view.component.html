@@ -1,0 +1,76 @@
+<div class="course-view">
+
+    <div>
+      <h1 class="course-name">{{course.name}}</h1>
+    </div>
+    
+    <div class="description-container">
+      <div class="description">
+        <h1 style="font-size: 2.5rem;">Description</h1>
+        <div [innerHTML]="course.description"></div> 
+        <h1 *ngIf="isOwnedBool" class="">Course progress:<div class="text-green">{{completeElements.length}}/{{allElements.length}}</div></h1> 
+      </div>
+    </div>
+
+    <div class="center">
+        <h2 style="font-size: 2rem;">Course Content:</h2>
+    </div>   
+
+    <div class="sections-container mt-3">
+       
+        <div class="sections">
+            <div class="" *ngFor="let item of sectionsWithElements">      
+                <button type="button" class="collapsible" (click)="collapse.toggle()" [attr.aria-expanded]="!isCollapsed"
+                aria-controls="collapseExample">
+                <span class="button-content">
+                    {{item.section.name}}
+                    <div class="right">
+                        {{item.elements.length}} lectures, {{getTotalLength(item.elements)}} minutes
+                    </div>
+                </span>
+            </button>
+                      
+                <div #collapse="ngbCollapse" [(ngbCollapse)]="item.closed">
+                    <div *ngIf="isOwnedBool" class="">
+                        <div class="" (click)="selectElement(element)" routerLink="/course/element" *ngFor="let element of item.elements" type="button" class="card-body">
+                            <div class="d-flex element">
+                                <p>{{element.name}}</p>
+                                <div class="right d-flex">
+                                    <p class="mx-3 text-green" *ngIf="isComplete(element)">COMPLETE</p>
+                                    {{element.length}} minutes
+                                </div>
+                            </div>               
+                        </div>
+
+                    </div>
+
+                    <div *ngIf="!isOwnedBool" class="">
+                        <div class="d-flex" *ngFor="let element of item.elements" type="" class="card-body">
+                            <div class="d-flex">
+                                <p>{{element.name}}</p>
+                                <p class="mx-3 text-green" *ngIf="isComplete(element)">COMPLETE</p>
+                            </div>               
+                        </div>
+                    </div>   
+
+                </div>
+            </div>
+        </div>
+    </div>               
+
+    <div class="description-container mt-5">
+        <div class="description">
+            <h1 style="font-size: 4rem;">Ratings</h1>   
+        </div>
+    </div>
+
+
+    <div class="mt-3" *ngFor="let rating of ratings">
+        <app-rating class="" [rating]="rating"></app-rating>
+    </div>
+
+    <div class="center mt-5">
+        <button *ngIf="isOwnedBool" [routerLink]="['create-rating', course.id]" class="btn btn-primary btn-bottom">Rate Course</button>
+    </div>
+   
+  </div>

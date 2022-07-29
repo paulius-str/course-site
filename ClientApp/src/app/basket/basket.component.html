@@ -1,0 +1,8 @@
+<div class="basket">
+    <div class="basket-element" *ngFor="let item of basketService.getItems()">{{item.name}}</div>
+    <div class="bottom" *ngIf="basketService.getItems().length > 0">
+        <div>
+            <button routerLink="/checkout" class="btn-primary btn-checkout btn">Checkout</button>
+        </div>
+    </div>    
+</div>

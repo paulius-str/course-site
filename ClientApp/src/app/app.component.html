@@ -1,0 +1,35 @@
+<body>
+  <nav-menu></nav-menu>
+  <div class="container">
+
+    <div class="wrapper">
+
+      <div class="aside">
+        <h1>Navigation</h1>
+        <ul class="navigation-list">
+          <li class="navigation-list-element">
+            <a routerLink="/home" routerLinkActive="active_route">All Courses</a>
+          </li>
+          <li *ngIf="authService.appUser" class="navigation-list-element">
+            <a routerLink="/courses" routerLinkActive="active_route">My Courses</a>
+          </li>
+          <li *ngIf="authService.appUser?.isPublisher" class="navigation-list-element">
+            <a routerLink="/publisher/courses" routerLinkActive="active_route">My Publised Courses</a>
+          </li>
+        </ul>
+      </div>
+
+      <div class="content">
+        <router-outlet></router-outlet>
+      </div>
+      
+      <div class="right-aside-container">
+        <div class="content-right">
+          <img src="./assets/img/ad.png" alt="ad">
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+</body>

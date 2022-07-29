@@ -1,0 +1,91 @@
+<div class="edit-container">
+
+            <form method="post" #myForm="ngForm">
+
+                <div class="txt_field center">
+                    <label>Name:</label>
+                    <input [(ngModel)]="course.name" type="text" name="name" placeholder="Name">
+                </div>
+
+                <div class="txt_field center my-5">
+                    <label>Price:</label>
+                    <input [(ngModel)]="course.price" type="number" name="price" placeholder="Price">
+                </div>
+
+                <div class="txt_field center my-5">
+                    <label>Category:</label>
+                    <input [(ngModel)]="course.category" type="text" name="category" placeholder="Category">
+                </div>
+
+                <div class="txt_field center my-5">
+                    <label>Short Description:</label>
+                    <input [(ngModel)]="course.shortDescription" type="text" name="shortDescription" placeholder="shortDescription">
+                </div>
+
+                <div class="center mt-5">
+                    <label class="mb-5">Description:</label>
+                    <div class="NgxEditor__Wrapper" [class.invalid-input]="descriptionInput.invalid && (descriptionInput.dirty || myForm.submitted)">
+                        <ngx-editor-menu [editor]="editor"> </ngx-editor-menu>
+                        <ngx-editor
+                          [editor]="editor"
+                          name="articleContent"
+                          [(ngModel)]="course.description"
+                          [disabled]="false"
+                          [placeholder]="'Type here...'"
+                          required
+                          #descriptionInput="ngModel"
+                        ></ngx-editor>
+                      </div>
+                </div>
+
+            </form>
+           
+            <div class="center my-5">
+                <label>Course Sections:</label>
+            </div>
+
+            <div class="sections-container">
+                <div class="sections">
+                    <div class="" *ngFor="let item of sectionsWithElements">      
+                            <button type="button" style="display: inline-block;" class="collapsible" (click)="collapse.toggle()" [attr.aria-expanded]="!isCollapsed"
+                            aria-controls="collapseExample">
+                                <div class="element-details">
+                                    {{item.section.name}}
+                                    <div class="element-buttons">
+                                        <!-- <button class="btn-primary btn">Edit</button> -->
+                                        <button (click)="deleteSection(item.section.id)" class="btn-danger btn">Delete</button>
+                                    </div>     
+                                </div>                                
+                            </button>
+                              
+                        <div #collapse="ngbCollapse" [(ngbCollapse)]="item.closed">
+                            <div class="">
+                                <div class="" *ngFor="let element of item.elements" type="button" class="card-body">
+                                    <div class="element-details">
+                                        <p [routerLink]="['edit-element', element.id]">{{element.name}}</p>
+                                        <div class="element-buttons">
+                                            <button [routerLink]="['edit-element', element.id]" class="btn-primary btn">Edit</button>
+                                            <button (click)="deleteElement(element.id)" class="btn-danger btn">Delete</button>
+                                        </div>                       
+                                    </div>               
+                                </div>
+        
+                            </div>
+
+                            <div class="center">
+                                <button [routerLink]="['new-element', item.section.id]" class="btn-secondary btn-bottom btn mt-1 mb-3">New Element</button>   
+                            </div> 
+                            
+                        </div>
+                    </div>
+                </div>
+            </div>   
+
+            <div class="center">
+                <button routerLink="new-section" class="btn-primary btn btn-bottom mt-1">New Section</button>    
+                <button *ngIf="!isPublished" (click)="publishCourse()" class="btn-primary btn btn-bottom mx-3 mt-1">Publish Course</button>    
+                <button *ngIf="isPublished"  (click)="unpublishCourse()" class="btn-primary btn btn-bottom mx-3 mt-1">Unpublish</button>    
+                <button (click)="saveCourse()" class="btn-primary btn btn-bottom mt-1">Save Course</button>    
+            </div>
+    
+</div>

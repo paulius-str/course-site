@@ -1,0 +1,15 @@
+<div class="container center edit-container">
+    <form class="center">
+        <div class="txt_field center mt-5">
+            <label>Review:</label>
+            <input class="mt-3" [(ngModel)]="rating.review" type="text" name="review" placeholder="Your Review">
+        </div>
+
+        <ngb-rating class="mt-5" [(rate)]="rating.score" value="1" [max]="5"></ngb-rating>
+
+        <div class="center mt-5">
+            <button (click)="submit()" class="btn-primary btn-bottom btn">Submit Review</button> 
+        </div>
+    </form> 
+</div>
+

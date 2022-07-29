@@ -1,0 +1,27 @@
+.basket {
+    width: 30rem;
+}
+
+.basket-element {
+    font-size: 16pt;
+    margin-top: 1rem;
+    margin-left: 1rem;
+    margin-right: 1rem;
+}
+
+.bottom {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.btn-checkout {
+    width: 20rem;
+    height: 5.5rem;
+    font-size: 15pt;
+    margin: 2rem 0 0 0;
+}
+
+.btn-primary {
+    background-color: #1688c5;
+}

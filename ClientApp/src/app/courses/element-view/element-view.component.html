@@ -1,0 +1,43 @@
+<div class="container mt-5">
+    <h2 class="d-flex justify-content-center title">{{element.name}}</h2>
+    <div class="mt-4 center" *ngIf="videoUrl.length > 0">
+        <app-video-player class="video-view" [videoId]="currentVideoId"></app-video-player>
+    </div>
+    
+    <div class="mt-5 mb-5" [innerHTML]="elementContent.articleContent.text"></div>
+    
+    <div class="d-flex justify-content-center">
+        <button *ngIf="hasNextElement" (click)="loadNextElement()" class="btn-secondary" style="width: 85px; height: 40px;">Next</button>
+        <button *ngIf="!hasNextElement" (click)="markAsComplete()" routerLink="/course" class="btn-secondary" style="width: 85px; height: 40px;">Finish</button>
+    </div>  
+
+    <h2 class="mt-5 d-flex justify-content-center">Questions:</h2>
+
+    <div class="mt-4" *ngFor="let question of questions">
+        <app-question [question]="question" class="d-flex justify-content-center"></app-question>
+    </div>
+
+    <div class="center">
+
+        <form #myForm="ngForm" (ngSubmit)="onQuestionSubmit(myForm)">
+        
+            <div class="txt_field center my-5">
+                <label>Title:</label>
+                <input [(ngModel)]="newQuestion.title" type="text" name="title" placeholder="Title"
+                required #titleInput="ngModel" [class.invalid-input]="titleInput.invalid && (titleInput.dirty || myForm.submitted)">
+            </div>
+
+            <div class="txt_field center my-5">
+                <label>Question:</label>
+                <input [(ngModel)]="newQuestion.text" type="text" name="question" placeholder="Question"
+                required #questionInput="ngModel" [class.invalid-input]="questionInput.invalid && (questionInput.dirty || myForm.submitted)">
+            </div>
+    
+            <div class="center">
+            <button type="submit" class="btn-primary btn btn-bottom mt-5">Create Question</button>
+            </div>  
+
+        </form>
+        
+    </div>
+</div>

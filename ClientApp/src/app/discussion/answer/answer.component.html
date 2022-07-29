@@ -1,0 +1,25 @@
+<!-- <div  class="card-custom mb-3" style="width: 720px; height: 180px;">
+    <div class="row g-0">
+      <div class="col-md-8">
+        <div class="card-body">
+          <p class="card-text">{{answer.text}}</p>
+        </div>
+      </div>
+    </div>
+</div> -->
+
+<div class="card-custom" [class.my-question]="answer.userId == authService.appUser?.id">
+  <div  class="question-container">
+    <div class="first-column">
+      <div class="img">
+        <img src="./assets/img/user.png" alt="">
+      </div>
+      <div class="username bottom">
+        <strong>{{username}}</strong>
+      </div>     
+    </div>
+    <div class="second-column">
+      <p class="question-text">{{answer.text}}</p>
+    </div>
+  </div>
+</div>

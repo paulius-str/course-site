@@ -1,0 +1,20 @@
+
+<div (click)="closeModal($event)" class="modal-backdrop">
+    <dialog class="modal-custom" id="login-modal" open="true">
+      <div class="center">
+        <h1>Checkout</h1>
+      </div>
+      <div class="course-list">
+        <div *ngFor="let course of courses" class="course-item">
+            <h2 class="course-name">{{course.name}}</h2>
+            <h2 class="course-price">{{course.price}} $</h2>
+        </div>
+        <div class="course-item course-total">
+            <h2 class="course-name">Total:</h2>
+            <h2 class="course-price">{{this.basketService.total()}} $</h2>
+        </div>
+      </div>    
+      <button (click)="proceed()" class="btn-primary btn bottom-right">Next</button>
+      <button (click)="closeModalSimple()" class="btn-danger btn bottom-left">Cancel</button>
+    </dialog>
+  </div>

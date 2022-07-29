@@ -1,0 +1,75 @@
+.footer {
+    padding: 12.8rem 0;
+    border-top: 1px solid #eee;
+    margin: auto;
+}
+
+.footer-heading {
+    font-size: 1.8rem;
+    font-weight: 500;
+    margin-bottom: 4rem;
+}
+
+.grid {
+    display: grid;
+    column-gap: 6.4rem;
+    row-gap: 9.6rem;
+}
+
+.contacts {
+    font-style: normal;
+    font-size: 1.6rem;
+    line-height: 1.6;
+}
+  
+.address {
+    margin-bottom: 2.4rem;
+}
+
+.footer-nav {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 2.4rem;
+}
+
+.footer-link:link,
+.footer-link:visited {
+    text-decoration: none;
+    font-size: 1.6rem;
+    /* color: #767676; */
+    transition: all 0.3s;
+}
+
+.footer-link:hover {
+    color: #555;
+}
+
+.grid--footer {
+    grid-template-columns: repeat(4, 1fr);
+}
+
+.footer {
+    padding: 12.8rem 0;
+    margin: auto;
+    border-top: 1px solid #eee;
+}
+
+@media (max-width: 768px) {
+    .grid--footer {
+        grid-template-columns: repeat(2, 1fr);
+    }
+ }
+
+.toggle{
+    font-size: 1.6rem;
+}
+
+.toggle:hover{
+    cursor: pointer;
+    font-size: 1.62rem;
+}
+
+ 
+ 
+ 

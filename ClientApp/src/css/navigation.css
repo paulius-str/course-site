@@ -1,0 +1,25 @@
+.aside h1{
+    margin-top: 1rem;
+    margin-bottom: 2rem;
+}
+
+.aside h2{
+    font-size: 1.5rem;
+}
+
+.navigation-list{
+    list-style-type: none;
+    font-size: 1.4rem;
+}
+
+.navigation-list-element{
+    margin: 1rem 0;
+}
+
+.navigation-list-category{
+    margin: 1rem 0.1rem;
+}
+
+.active_route {
+    text-decoration: underline;
+}

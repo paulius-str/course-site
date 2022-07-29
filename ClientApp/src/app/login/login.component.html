@@ -1,0 +1,22 @@
+
+  <div (click)="closeModal($event)" class="modal-backdrop">
+    <dialog class="modal-custom" id="login-modal" open="true">
+      <div class="center">
+        <h1>Login</h1>
+        <form #myForm="ngForm" (ngSubmit)="onSubmit(myForm)" class="login-fields" name="login" method="post">
+          <div class="txt_field">
+            <input [(ngModel)]="email" type="email" name="email" placeholder="Email Address"
+            required pattern="[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$" #emailInput="ngModel" [class.invalid-input]="emailInput.invalid && (myForm.submitted)">
+          </div>
+          <div class="txt_field">
+            <input [(ngModel)]="password" type="password" name="password" placeholder="Password"
+            required #passwordInput="ngModel" [class.invalid-input]="passwordInput.invalid && (passwordInput.dirty || myForm.submitted)">
+          </div>
+          <input id="button" class="btn btn-navbar btn-modal" type="submit" value="Submit">
+          <div class="signup_link">
+            Don't have an account yet? <button type="button" (click)="navigateToSignup()">Signup</button>
+          </div>
+        </form>
+      </div>
+    </dialog>
+  </div>

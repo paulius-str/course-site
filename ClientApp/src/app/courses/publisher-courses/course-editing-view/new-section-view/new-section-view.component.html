@@ -1,0 +1,19 @@
+<div class="edit-container">
+  <form method="post" name="signup">
+
+    <div class="txt_field center">
+        <label>Section Name:</label>
+        <input [(ngModel)]="section.name" type="text" name="name" placeholder="Name">
+    </div>
+
+    <div class="center mt-5">
+        <label class="mb-5">Section Description:</label>
+        <textarea [(ngModel)]="section.description" name="description" placeholder="Description"></textarea>
+    </div>
+
+    <div class="d-flex justify-content-center mt-4">
+      <button (click)="createSection()" type="submit" class="btn btn-primary btn-bottom">Create</button>
+    </div>
+
+  </form>
+</div>

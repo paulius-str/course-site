@@ -1,0 +1,19 @@
+<div class="card-custom " [class.my-rating]="rating.userId == authService.appUser?.id">
+  <div class="rating-container">
+    <div class="first-column">
+      <div class="img">
+        <img src="./assets/img/user.png" alt="">
+      </div>
+      <div class="username bottom">
+        <strong>{{username}}</strong>
+      </div>     
+    </div>
+    <div class="second-column">
+      <p>{{rating.review}}</p>
+      <div class="bottom-right">
+        Rating: <strong>{{rating.score}}/5</strong>
+      </div>
+    </div>
+
+  </div>
+</div>

@@ -1,0 +1,14 @@
+<div class="edit-container">
+  <div class="txt_field center">
+    <label>Element Name:</label>
+    <input [(ngModel)]="element.name" type="text" name="name" placeholder="Name">
+  </div>
+</div>
+
+<form>
+    <div class="form-group my-3 mx-3">
+      <div class="d-flex justify-content-center mt-4">
+        <button (click)="createElement()" type="submit" class="btn btn-primary btn-bottom">Create</button>
+      </div>
+    </div>  
+</form>
