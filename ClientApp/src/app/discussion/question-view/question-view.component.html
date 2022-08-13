@@ -1,0 +1,34 @@
+<div class="container">
+
+    <div class="mt-5 d-flex justify-content-center">
+        <app-question [question]="question"></app-question>
+    </div>
+
+    <div class="d-flex justify-content-center" *ngFor="let answer of answers">
+        <app-answer [answer]="answer"></app-answer>
+    </div>
+
+    
+    <div class="d-flex justify-content-center">
+        <div>
+            <form style="width: 400px;">
+                <div class="form-group my-3 mx-3">
+    
+                    <label>Answer:</label>
+                  <input  [(ngModel)]="newAnswer.text" name="section-name" type="text" class="form-control" id="courseName">   
+            
+                  <div class="d-flex justify-content-center mt-4">
+                    <button (click)="createAnswer()" type="submit" class="btn btn-primary">Write Answer</button>
+                  </div>
+            
+                </div>
+               
+                
+              </form>
+            
+        </div>
+        
+    </div>
+</div>
+
+

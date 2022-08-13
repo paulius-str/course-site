@@ -1,0 +1,26 @@
+<div class="card mb-3" style="width: 760px; height: 180px;">
+    <div class="row g-0">
+      <div class="col-md-4">
+        <img style="width: 180px;" src="{{baseUrl + course.pictureUrl}}" class="img-fluid rounded-start" alt="...">
+      </div>
+      <div class="col-md-8">
+        <div class="card-body">
+          <h5 *ngIf="!editMode" type="button" class="card-title" routerLink="/course" (click)="coursesService.selectCourse(course)">{{course.name}}</h5>
+          <h5 *ngIf="editMode" type="button" class="card-title" routerLink="/course-edit" (click)="coursesService.selectCourse(course)">{{course.name}}</h5>
+          <p class="card-text">{{course.description}}</p>
+
+          <div class="">
+            
+            
+            <div class="d-flex justify-content-between">
+              <p class="card-text"><small class="text-muted">{{course.price}}$</small></p>
+              <button *ngIf="!owned && authService.appUser" (click)="addToBasket()" class="btn-primary">Add to basket</button>
+            </div>
+            
+            <!-- <button *ngIf="editMode" (click)="deleteCourse()" class="btn-danger">Delete Course</button> -->
+          </div>   
+
+        </div>
+      </div>
+    </div>
+</div>

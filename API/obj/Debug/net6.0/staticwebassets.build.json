@@ -1,0 +1,88 @@
+{
+  "Version": 1,
+  "Hash": "Sy8L916AGXp4nYdhi6Zr+aCO9uS06LJLV4IK4qJhx6c=",
+  "Source": "API",
+  "BasePath": "_content/API",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [
+    {
+      "Name": "API\\wwwroot",
+      "Source": "API",
+      "ContentRoot": "C:\\Users\\pauli\\Desktop\\Studijos\\4sem\\Duomenu baziu praktika\\Project\\API\\wwwroot\\",
+      "BasePath": "_content/API",
+      "Pattern": "**"
+    }
+  ],
+  "Assets": [
+    {
+      "Identity": "C:\\Users\\pauli\\Desktop\\Studijos\\4sem\\Duomenu baziu praktika\\Project\\API\\wwwroot\\favicon.ico",
+      "SourceId": "API",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\pauli\\Desktop\\Studijos\\4sem\\Duomenu baziu praktika\\Project\\API\\wwwroot\\",
+      "BasePath": "_content/API",
+      "RelativePath": "favicon.ico",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\favicon.ico"
+    },
+    {
+      "Identity": "C:\\Users\\pauli\\Desktop\\Studijos\\4sem\\Duomenu baziu praktika\\Project\\API\\wwwroot\\images\\courses\\image1.png",
+      "SourceId": "API",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\pauli\\Desktop\\Studijos\\4sem\\Duomenu baziu praktika\\Project\\API\\wwwroot\\",
+      "BasePath": "_content/API",
+      "RelativePath": "images/courses/image1.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\images\\courses\\image1.png"
+    },
+    {
+      "Identity": "C:\\Users\\pauli\\Desktop\\Studijos\\4sem\\Duomenu baziu praktika\\Project\\API\\wwwroot\\images\\courses\\image2.png",
+      "SourceId": "API",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\pauli\\Desktop\\Studijos\\4sem\\Duomenu baziu praktika\\Project\\API\\wwwroot\\",
+      "BasePath": "_content/API",
+      "RelativePath": "images/courses/image2.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\images\\courses\\image2.png"
+    },
+    {
+      "Identity": "C:\\Users\\pauli\\Desktop\\Studijos\\4sem\\Duomenu baziu praktika\\Project\\API\\wwwroot\\images\\courses\\image3.png",
+      "SourceId": "API",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\pauli\\Desktop\\Studijos\\4sem\\Duomenu baziu praktika\\Project\\API\\wwwroot\\",
+      "BasePath": "_content/API",
+      "RelativePath": "images/courses/image3.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\images\\courses\\image3.png"
+    }
+  ]
+}

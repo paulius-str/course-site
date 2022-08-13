@@ -1,0 +1,44 @@
+<div class="container mt-5">
+    <h2 class="d-flex justify-content-center">{{element.name}}</h2>
+    <div class="mt-4 d-flex justify-content-center" *ngIf="videoUrl.length > 0">
+        <app-video-player [videoId]="currentVideoId"></app-video-player>
+    </div>
+    
+    <p class="mt-5">{{elementContent.articleContent.text}}</p>
+
+    <div class="d-flex justify-content-center">
+        <button *ngIf="hasNextElement" (click)="loadNextElement()" class="btn-secondary" style="width: 85px; height: 40px;">Next</button>
+        <button *ngIf="!hasNextElement" (click)="markAsComplete()" routerLink="/course" class="btn-secondary" style="width: 85px; height: 40px;">Finish</button>
+    </div>  
+
+    <h2 class="mt-5 d-flex justify-content-center">Questions:</h2>
+
+    <div class="mt-4" *ngFor="let question of questions">
+        <app-question [question]="question" class="d-flex justify-content-center"></app-question>
+    </div>
+
+    <div class="d-flex justify-content-center">
+        <div>
+            <form style="width: 400px;">
+                <div class="form-group my-3 mx-3">
+            
+                  <label>Question title:</label>
+                  <input  [(ngModel)]="newQuestion.title" name="section-name" type="text" class="form-control" id="courseName">   
+            
+                
+                  <label class="mt-3">Question:</label>
+                  <input  [(ngModel)]="newQuestion.text" name="order" type="text" class="form-control" id="courseName">   
+            
+                  <div class="d-flex justify-content-center mt-4">
+                    <button (click)="createQuestion()" type="submit" class="btn btn-primary">Create Question</button>
+                  </div>
+            
+                </div>
+               
+                
+              </form>
+            
+        </div>
+        
+    </div>
+</div>

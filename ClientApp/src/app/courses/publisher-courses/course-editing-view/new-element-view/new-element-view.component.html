@@ -1,0 +1,18 @@
+<form>
+    <div class="form-group my-3 mx-3">
+
+      <label>Element Name:</label>
+      <input  [(ngModel)]="element.name" name="section-name" type="text" class="form-control" id="courseName" placeholder="Name">   
+
+    
+      <label class="mt-3">Order:</label>
+      <input  [(ngModel)]="element.order" name="order" type="number" value = "1" class="form-control" id="courseName">   
+
+      <div class="d-flex justify-content-center mt-4">
+        <button (click)="createElement()" type="submit" class="btn btn-primary">Create</button>
+      </div>
+
+    </div>
+   
+    
+  </form>

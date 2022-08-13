@@ -1,0 +1,62 @@
+<header>
+  <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <div class="container" style="">
+      <a class="navbar-brand" routerLink="/">Home</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">         
+        </ul>
+
+
+
+        <div *ngIf="authService.appUser == null" class="d-flex">
+          <form class="d-flex mx-2">
+            <button routerLink="/login" class="btn btn-outline-primary" style="width: 85px;" type="submit">Log In</button>
+          </form>
+          <form class="d-flex">
+            <button routerLink="/signup"class="btn btn-primary" style="width: 85px;" type="submit">Sign Up</button>
+          </form>
+        </div>
+
+        <div *ngIf="authService.appUser" class="d-flex">
+
+          <div *ngIf="basketService.getItems().length > 0">
+            <div class="row">
+              <div class="col">
+                <div ngbDropdown class="d-inline-block mx-3">
+                  <button type="button" class="btn btn-secondary" id="dropdownBasic1" ngbDropdownToggle>
+                    Basket
+                  </button>
+                  <div ngbDropdownMenu aria-labelledby="dropdownBasic1">
+                      <app-basket></app-basket>
+                  </div>
+                </div>
+              </div>   
+          </div>
+               
+          </div>
+
+          <div class="row">
+            <div class="col">
+              <div ngbDropdown class="d-inline-block">
+                <button type="button" class="btn btn-secondary" id="dropdownBasic1" ngbDropdownToggle>
+                  Welcome, {{authService.appUser.firstName}}
+                </button>
+                <div ngbDropdownMenu aria-labelledby="dropdownBasic1">
+                  <button routerLink="/courses" ngbDropdownItem>My Courses</button>
+                  <button *ngIf="!authService.appUser.isPublisher" (click)="authService.becomePublisher()" ngbDropdownItem>Become Publisher</button>
+                  <button *ngIf="authService.appUser.isPublisher" routerLink="publisher/courses" ngbDropdownItem>Published Courses</button>
+                  <button (click)="authService.logout()" ngbDropdownItem>Logout</button>
+                </div>
+              </div>
+            </div>         
+          </div>
+
+        </div>    
+
+      </div>
+    </div>
+  </nav>
+</header>

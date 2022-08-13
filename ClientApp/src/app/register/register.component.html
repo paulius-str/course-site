@@ -1,0 +1,62 @@
+<div class="d-flex justify-content-center mt-5">
+  
+    <form (submit)="register()" style="width: 300px;">
+      <div class="mb-3 my-1">
+        <label class="form-label">Email address</label>
+        <input [(ngModel)]="registerDto.emailAddress" name="email" type="email" class="form-control">
+      </div>
+      <div class="mb-2 my-1">
+        <label class="form-label">Username</label>
+        <input [(ngModel)]="registerDto.username" name="username" type="text" class="form-control">
+      </div>
+      <div class="mb-2 my-1">
+        <label class="form-label">First Name</label>
+        <input [(ngModel)]="registerDto.firstName" name="firstname" type="text" class="form-control">
+      </div>
+      <div class="mb-2 my-1">
+        <label class="form-label">Last Name</label>
+        <input [(ngModel)]="registerDto.lastName" name="lastname" type="text" class="form-control">
+      </div>
+      <div class="mb-2">
+        <label  class="form-label">Birth Date</label>
+        <form class="">
+            <div class="col-12">
+              <div class="input-group">
+                <input class="form-control" placeholder="yyyy-mm-dd"
+                       name="dp" [(ngModel)]="model" ngbDatepicker #d="ngbDatepicker">
+                <button class="btn btn-outline-secondary calendar" (click)="d.toggle()" type="button"></button>
+              </div>
+            </div>
+          </form>
+      </div>
+      <div class="mb-2">
+        <label for="exampleInputPassword1" class="form-label">Password</label>
+        <input [(ngModel)]="registerDto.password" name="password" type="password" class="form-control">
+      </div>
+      <div class="">
+        <label for="exampleInputPassword1" class="form-label">Repeat Password</label>
+        <input type="password" class="form-control">
+      </div>   
+      <div class="mt-5">
+        <button style="width: 100%;" class="my-5" type="submit" class="btn btn-primary">Sign Up</button>
+      </div>
+      <div class="mt-2">
+        <p>Already have an account? <a routerLink="/login">Sign In</a></p> 
+      </div>
+      
+    </form>
+  
+    <!-- <div class="row">
+        <div class="col">
+          <div ngbDropdown class="d-inline-block">
+            <button type="button" class="btn btn-outline-primary" id="dropdownBasic1" ngbDropdownToggle>Toggle dropdown</button>
+            <div ngbDropdownMenu aria-labelledby="dropdownBasic1">
+              <button ngbDropdownItem>Action - 1</button>
+              <button ngbDropdownItem>Another Action</button>
+              <button ngbDropdownItem>Something else is here</button>
+            </div>
+          </div>
+    </div> -->
+    
+</div>
+

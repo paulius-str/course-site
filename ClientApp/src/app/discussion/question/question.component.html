@@ -1,0 +1,15 @@
+<div  class="card mb-3" style="width: 760px; height: 180px;">
+    <div class="row g-0">
+      <div class="col-md-8">
+        <div class="card-body">
+          <h5 (click)="openQuestion()" type="button" class="card-title" routerLink="/question">{{question.title}}</h5>
+          <p class="card-text">{{question.text}}</p>
+
+          <div class="">            
+            <!-- <button *ngIf="editMode" (click)="deleteCourse()" class="btn-danger">Delete Course</button> -->
+          </div>   
+
+        </div>
+      </div>
+    </div>
+</div>

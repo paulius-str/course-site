@@ -1,0 +1,61 @@
+<div class="container mt-5">
+    <div class="d-flex justify-content-center">
+        <div style="width: 50%;">
+
+            <h5 *ngIf="isOwnedBool" class="text-primary">Course progress: {{completeElements.length}}/{{allElements.length}}</h5>
+
+            <h3>{{course.name}}</h3>       
+            <h5 *ngFor="let author of authors">{{author.firstName}} {{author.lastName}} </h5>
+            <h4>{{course.description}}</h4>
+            <h3 class="my-3">Content:</h3> 
+            <div *ngFor="let item of sectionsWithElements">
+
+                <div >
+                    <div type="button" class="card mt-3" (click)="collapse.toggle()" [attr.aria-expanded]="!isCollapsed"
+                    aria-controls="collapseExample">
+                        <div class="mx-2">
+                            {{item.section.name}}
+                        </div>        
+                    </div>
+                </div>
+                       
+                <div #collapse="ngbCollapse" [(ngbCollapse)]="item.closed">
+                    <div *ngIf="isOwnedBool" class="">
+                        <div class="d-flex" (click)="selectElement(element)" routerLink="/course/element" *ngFor="let element of item.elements" type="button" class="card-body">
+                            <div class="d-flex">
+                                <p>{{element.name}}</p>
+                                <p class="mx-3 text-success" *ngIf="isComplete(element)">COMPLETE</p>
+                            </div>               
+                        </div>
+
+                    </div>
+
+                    <div *ngIf="!isOwnedBool" class="">
+                        <div class="d-flex" *ngFor="let element of item.elements" type="" class="card-body">
+                            <div class="d-flex">
+                                <p>{{element.name}}</p>
+                                <p class="mx-3 text-success" *ngIf="isComplete(element)">COMPLETE</p>
+                            </div>               
+                        </div>
+
+                    </div>
+                    
+                </div>
+
+            </div>             
+
+            <h3 class="my-3">Ratings:</h3> 
+
+            <div class="mt-3" *ngFor="let rating of ratings">
+                <app-rating class="d-flex justify-content-center" [rating]="rating"></app-rating>
+            </div>
+    
+            <div>
+                <button *ngIf="isOwnedBool" (click)="openRatingView()" class="btn-primary">Rate Course</button>
+            </div>
+        </div>  
+        
+       
+    </div>
+</div>
+

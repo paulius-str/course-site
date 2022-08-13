@@ -1,0 +1,8 @@
+
+<div>
+    <h6 *ngFor="let item of basketService.getItems()">{{item.name}}</h6>
+    <div *ngIf="basketService.getItems().length > 0" class="d-flex justify-content-center">
+        <button (click)="basketService.checkout()" class="btn-primary">Checkout</button>
+    </div>    
+</div>
+

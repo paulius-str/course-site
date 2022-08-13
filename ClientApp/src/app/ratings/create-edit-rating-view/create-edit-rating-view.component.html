@@ -1,0 +1,14 @@
+<div class="d-flex justify-content-center">
+    <div class="">
+        <label class="mt-3">Rating:</label><br>
+        <ngb-rating [(rate)]="rating.score" [max]="5"></ngb-rating> <br>
+        <label class="mt-3">Review:</label>
+        <input  [(ngModel)]="rating.review" name="section-description" type="text" class="form-control" id="courseName" placeholder="Description">  
+        <div class="d-flex justify-content-center">
+            <button (click)="submit()" class="d-flex justify-content-center mt-3 mb-3 btn-primary">Submit Review</button> 
+        </div>
+    </div>
+    
+   
+</div>
+

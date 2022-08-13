@@ -1,0 +1,8 @@
+<div class="container mt-5 d-flex justify-content-center">   
+    <div>
+        <div *ngFor="let course of courses" class="d-flex justify-content-left" >
+          <app-course [course]="course" [owned]="true" [editMode]="true"></app-course>
+      </div>
+      <button (click)="open()" class="btn btn-primary">New Course</button>
+    </div> 
+  </div>

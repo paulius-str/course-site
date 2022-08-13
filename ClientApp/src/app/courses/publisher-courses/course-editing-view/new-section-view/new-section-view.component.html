@@ -1,0 +1,20 @@
+<form>
+    <div class="form-group my-3 mx-3">
+
+      <label>Section Name:</label>
+      <input  [(ngModel)]="section.name" name="section-name" type="text" class="form-control" id="courseName" placeholder="Name">   
+
+      <label class="mt-3">Description:</label>
+      <input  [(ngModel)]="section.description" name="section-description" type="text" class="form-control" id="courseName" placeholder="Description">   
+
+      <label class="mt-3">Order:</label>
+      <input  [(ngModel)]="section.order" name="order" type="number" value = "1" class="form-control" id="courseName">   
+
+      <div class="d-flex justify-content-center mt-4">
+        <button (click)="createSection()" type="submit" class="btn btn-primary">Create</button>
+      </div>
+
+    </div>
+   
+    
+  </form>
