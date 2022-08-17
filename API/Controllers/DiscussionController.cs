@@ -1,51 +1,49 @@
-﻿using API.Entities.Discussion;
-using API.Interfaces;
+﻿using Api.Entities.Discussion;
+using Api.Contract;
 using Microsoft.AspNetCore.Mvc;
+using Api.Service.Contract;
+using Api.Shared.DataTransferObjects;
 
 namespace API.Controllers
 {
     public class DiscussionController : BaseApiController
     {
-        IDiscussionRepository _discussionRepository;
+        private readonly IServiceManager _serviceManager;
 
-        public DiscussionController(IDiscussionRepository discussionRepository)
+        public DiscussionController(IServiceManager serviceManager)
         {
-            _discussionRepository = discussionRepository;
+            _serviceManager = serviceManager;
         }
 
         [HttpGet("{elementId}")]
         public async Task<ActionResult<IReadOnlyList<Question>>> GetQuestions(int elementId)
         {
-            var result = await _discussionRepository.GetQuestions(elementId);
+            var questions = await _serviceManager.DiscussionService.GetQuestionsForElementAsync(elementId);
 
-            return Ok(result);
+            return Ok(questions);
         }
 
 
         [HttpGet("answers/{questionId}")]
         public async Task<ActionResult<IReadOnlyList<Answer>>> GetAnswers(int questionId)
         {
-            var result = await _discussionRepository.GetAnswers(questionId);
+            var answers = await _serviceManager.DiscussionService.GetAnswersForQuestionAsync(questionId);
 
-            return Ok(result);
+            return Ok(answers);
         }
 
         [HttpPost("{elementId}/{userId}")]
-        public async Task<IActionResult> CreateQuestion(Question question, int elementId, int userId)
+        public async Task<ActionResult<QuestionDto>> CreateQuestion(QuestionForCreationDto question, int elementId, int userId)
         {
-            question.ElementId = elementId;
-            question.UserId = userId;
-            var result = await _discussionRepository.CreateQuestion(question);
+            var result = await _serviceManager.DiscussionService.CreateQuestionAsync(question, elementId, userId);
 
             return Ok(result);
         }
 
         [HttpPost("answers/{questionId}/{userId}")]
-        public async Task<IActionResult> CreateAnswer(Answer answer, int questionId, int userId)
+        public async Task<ActionResult<AnswerDto>> CreateAnswer(AnswerForCreationDto answer, int questionId, int userId)
         {
-            answer.QuestionId = questionId;
-            answer.UserId = userId;  
-            var result = await _discussionRepository.CreateAnswer(answer);
+            var result = await _serviceManager.DiscussionService.CreateAnswerAsync(answer, questionId, userId);
 
             return Ok(result);
         }

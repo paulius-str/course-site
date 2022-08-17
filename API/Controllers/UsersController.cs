@@ -1,18 +1,19 @@
-﻿using API.DTOs;
-using API.Entities;
-using API.Interfaces;
+﻿using Api.Shared;
+using Api.Entities;
+using Api.Contract;
 using Microsoft.AspNetCore.Mvc;
 using System.Security.Claims;
+using Api.Service.Contract;
 
 namespace API.Controllers
 {
     public class UsersController : BaseApiController
     {
-        private readonly IAuthRepository _authRepository;
+        private readonly IServiceManager _serviceManager;
 
-        public UsersController(IAuthRepository authRepository)
+        public UsersController(IServiceManager serviceManager)
         {
-            _authRepository = authRepository;
+            _serviceManager = serviceManager;
         }
 
         [HttpGet("{userId}")]
@@ -20,46 +21,17 @@ namespace API.Controllers
         {
             if(User.Identity == null) return Unauthorized();
 
-            var identity = HttpContext.User.Identity as ClaimsIdentity;
+            var result = await _serviceManager.UserService.GetUserAsync(userId);
 
-            if (identity != null)
-            {
-                IEnumerable<Claim> claims = identity.Claims;
-                // or
-                Claim claim = claims.FirstOrDefault(c => c.Type == ClaimTypes.NameIdentifier);
-                //var value = claim.Value;
-                
-            }
-     
-            User result = await _authRepository.GetUser(userId);
-
-            if (result == null)
-                return NotFound();
-
-            bool isPublisher = await _authRepository.IsPublisher(userId);
-
-            return Ok(new UserDto()
-            {
-                Id = result.Id,
-                Email = result.EmailAddress,
-                FirstName = result.FirstName,
-                LastName = result.LastName,
-                IsPublisher = isPublisher
-            }); 
+            return Ok(new {success = result});
         } 
 
         [HttpPost("makepublisher/{userId}")]
         public async Task<IActionResult> MakePublisher(int userId)
         {
-            if(await _authRepository.IsPublisher(userId))
-                return BadRequest();
+            bool result = await _serviceManager.UserService.MakePublisherAsync(userId);
 
-            bool result = await _authRepository.MakePublisher(userId);
-
-            if(!result)
-                return BadRequest();
-
-            return Ok();
+            return Ok(new {success = result});
         }
     }
 }

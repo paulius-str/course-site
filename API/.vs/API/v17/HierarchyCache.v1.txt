@@ -1,0 +1,330 @@
+﻿++Solution 'API' ‎(7 of 7 projects)
+i:{00000000-0000-0000-0000-000000000000}:API.sln
+++Api.Service
+i:{00000000-0000-0000-0000-000000000000}:Api.Service
+i:{c5181c88-b615-457e-a664-d66f9e88f667}:c:\users\pauli\desktop\learning\dotnet\coursesite\api.service\bin\debug\net6.0\api.service.dll
+++Dependencies
+i:{76b2086b-e152-4348-8331-e6644ff78884}:>6145
+i:{0352ae5e-b053-461c-934e-87b1aabcb7ff}:>6163
+i:{5c7860f5-3ac3-4c41-bcbd-65940e4f1a07}:>6142
+i:{f09c9272-041f-4910-a34e-863b356078b7}:>6144
+i:{8f998b01-2a62-4a14-a527-c675fc01c4a3}:>6162
+i:{6f7bdf81-3520-48c2-9fdd-8da15aa91d57}:>6143
+i:{c5181c88-b615-457e-a664-d66f9e88f667}:>27989
+++AuthService.cs
+i:{76b2086b-e152-4348-8331-e6644ff78884}:c:\users\pauli\desktop\learning\dotnet\coursesite\api.service\authservice.cs
+++CourseService.cs
+i:{76b2086b-e152-4348-8331-e6644ff78884}:c:\users\pauli\desktop\learning\dotnet\coursesite\api.service\courseservice.cs
+++DiscussionService.cs
+i:{76b2086b-e152-4348-8331-e6644ff78884}:c:\users\pauli\desktop\learning\dotnet\coursesite\api.service\discussionservice.cs
+++RatingService.cs
+i:{76b2086b-e152-4348-8331-e6644ff78884}:c:\users\pauli\desktop\learning\dotnet\coursesite\api.service\ratingservice.cs
+++ServiceManager.cs
+i:{76b2086b-e152-4348-8331-e6644ff78884}:c:\users\pauli\desktop\learning\dotnet\coursesite\api.service\servicemanager.cs
+++UserService.cs
+i:{76b2086b-e152-4348-8331-e6644ff78884}:c:\users\pauli\desktop\learning\dotnet\coursesite\api.service\userservice.cs
+++Analyzers
+i:{76b2086b-e152-4348-8331-e6644ff78884}:analyzers
+i:{0352ae5e-b053-461c-934e-87b1aabcb7ff}:analyzers
+i:{5c7860f5-3ac3-4c41-bcbd-65940e4f1a07}:analyzers
+i:{f09c9272-041f-4910-a34e-863b356078b7}:analyzers
+i:{8f998b01-2a62-4a14-a527-c675fc01c4a3}:analyzers
+i:{6f7bdf81-3520-48c2-9fdd-8da15aa91d57}:analyzers
+i:{c5181c88-b615-457e-a664-d66f9e88f667}:analyzers
+++Frameworks
+i:{76b2086b-e152-4348-8331-e6644ff78884}:frameworks
+i:{0352ae5e-b053-461c-934e-87b1aabcb7ff}:frameworks
+i:{5c7860f5-3ac3-4c41-bcbd-65940e4f1a07}:frameworks
+i:{f09c9272-041f-4910-a34e-863b356078b7}:frameworks
+i:{8f998b01-2a62-4a14-a527-c675fc01c4a3}:frameworks
+i:{6f7bdf81-3520-48c2-9fdd-8da15aa91d57}:frameworks
+i:{c5181c88-b615-457e-a664-d66f9e88f667}:frameworks
+++Packages
+i:{76b2086b-e152-4348-8331-e6644ff78884}:packages
+i:{f09c9272-041f-4910-a34e-863b356078b7}:packages
+i:{8f998b01-2a62-4a14-a527-c675fc01c4a3}:packages
+i:{c5181c88-b615-457e-a664-d66f9e88f667}:packages
+++Projects
+i:{76b2086b-e152-4348-8331-e6644ff78884}:projects
+i:{0352ae5e-b053-461c-934e-87b1aabcb7ff}:projects
+i:{f09c9272-041f-4910-a34e-863b356078b7}:projects
+i:{8f998b01-2a62-4a14-a527-c675fc01c4a3}:projects
+i:{6f7bdf81-3520-48c2-9fdd-8da15aa91d57}:projects
+i:{c5181c88-b615-457e-a664-d66f9e88f667}:projects
+++Microsoft.CodeAnalysis.CSharp.NetAnalyzers
+i:{76b2086b-e152-4348-8331-e6644ff78884}:c:\program files\dotnet\sdk\6.0.202\sdks\microsoft.net.sdk\analyzers\microsoft.codeanalysis.csharp.netanalyzers.dll
+i:{0352ae5e-b053-461c-934e-87b1aabcb7ff}:c:\program files\dotnet\sdk\6.0.202\sdks\microsoft.net.sdk\analyzers\microsoft.codeanalysis.csharp.netanalyzers.dll
+i:{5c7860f5-3ac3-4c41-bcbd-65940e4f1a07}:c:\program files\dotnet\sdk\6.0.202\sdks\microsoft.net.sdk\analyzers\microsoft.codeanalysis.csharp.netanalyzers.dll
+i:{f09c9272-041f-4910-a34e-863b356078b7}:c:\program files\dotnet\sdk\6.0.202\sdks\microsoft.net.sdk\analyzers\microsoft.codeanalysis.csharp.netanalyzers.dll
+i:{8f998b01-2a62-4a14-a527-c675fc01c4a3}:c:\program files\dotnet\sdk\6.0.202\sdks\microsoft.net.sdk\analyzers\microsoft.codeanalysis.csharp.netanalyzers.dll
+i:{6f7bdf81-3520-48c2-9fdd-8da15aa91d57}:c:\program files\dotnet\sdk\6.0.202\sdks\microsoft.net.sdk\analyzers\microsoft.codeanalysis.csharp.netanalyzers.dll
+i:{c5181c88-b615-457e-a664-d66f9e88f667}:c:\program files\dotnet\sdk\6.0.202\sdks\microsoft.net.sdk\analyzers\microsoft.codeanalysis.csharp.netanalyzers.dll
+++Microsoft.CodeAnalysis.NetAnalyzers
+i:{76b2086b-e152-4348-8331-e6644ff78884}:c:\program files\dotnet\sdk\6.0.202\sdks\microsoft.net.sdk\analyzers\microsoft.codeanalysis.netanalyzers.dll
+i:{0352ae5e-b053-461c-934e-87b1aabcb7ff}:c:\program files\dotnet\sdk\6.0.202\sdks\microsoft.net.sdk\analyzers\microsoft.codeanalysis.netanalyzers.dll
+i:{5c7860f5-3ac3-4c41-bcbd-65940e4f1a07}:c:\program files\dotnet\sdk\6.0.202\sdks\microsoft.net.sdk\analyzers\microsoft.codeanalysis.netanalyzers.dll
+i:{f09c9272-041f-4910-a34e-863b356078b7}:c:\program files\dotnet\sdk\6.0.202\sdks\microsoft.net.sdk\analyzers\microsoft.codeanalysis.netanalyzers.dll
+i:{8f998b01-2a62-4a14-a527-c675fc01c4a3}:c:\program files\dotnet\sdk\6.0.202\sdks\microsoft.net.sdk\analyzers\microsoft.codeanalysis.netanalyzers.dll
+i:{6f7bdf81-3520-48c2-9fdd-8da15aa91d57}:c:\program files\dotnet\sdk\6.0.202\sdks\microsoft.net.sdk\analyzers\microsoft.codeanalysis.netanalyzers.dll
+i:{c5181c88-b615-457e-a664-d66f9e88f667}:c:\program files\dotnet\sdk\6.0.202\sdks\microsoft.net.sdk\analyzers\microsoft.codeanalysis.netanalyzers.dll
+++System.Text.Json.SourceGeneration
+i:{76b2086b-e152-4348-8331-e6644ff78884}:c:\program files\dotnet\packs\microsoft.netcore.app.ref\6.0.4\analyzers\dotnet\cs\system.text.json.sourcegeneration.dll
+i:{0352ae5e-b053-461c-934e-87b1aabcb7ff}:c:\program files\dotnet\packs\microsoft.netcore.app.ref\6.0.4\analyzers\dotnet\cs\system.text.json.sourcegeneration.dll
+i:{5c7860f5-3ac3-4c41-bcbd-65940e4f1a07}:c:\program files\dotnet\packs\microsoft.netcore.app.ref\6.0.4\analyzers\dotnet\cs\system.text.json.sourcegeneration.dll
+i:{f09c9272-041f-4910-a34e-863b356078b7}:c:\program files\dotnet\packs\microsoft.netcore.app.ref\6.0.4\analyzers\dotnet\cs\system.text.json.sourcegeneration.dll
+i:{8f998b01-2a62-4a14-a527-c675fc01c4a3}:c:\program files\dotnet\packs\microsoft.netcore.app.ref\6.0.4\analyzers\dotnet\cs\system.text.json.sourcegeneration.dll
+i:{6f7bdf81-3520-48c2-9fdd-8da15aa91d57}:c:\program files\dotnet\packs\microsoft.netcore.app.ref\6.0.4\analyzers\dotnet\cs\system.text.json.sourcegeneration.dll
+i:{c5181c88-b615-457e-a664-d66f9e88f667}:c:\program files\dotnet\packs\microsoft.netcore.app.ref\6.0.4\analyzers\dotnet\cs\system.text.json.sourcegeneration.dll
+++Microsoft.NETCore.App
+i:{76b2086b-e152-4348-8331-e6644ff78884}:c:\users\pauli\desktop\learning\dotnet\coursesite\api.service\microsoft.netcore.app
+i:{0352ae5e-b053-461c-934e-87b1aabcb7ff}:c:\users\pauli\desktop\learning\dotnet\coursesite\api.entities\microsoft.netcore.app
+i:{5c7860f5-3ac3-4c41-bcbd-65940e4f1a07}:c:\users\pauli\desktop\learning\dotnet\coursesite\api.shared\microsoft.netcore.app
+i:{f09c9272-041f-4910-a34e-863b356078b7}:c:\users\pauli\desktop\learning\dotnet\coursesite\api.service.contract\microsoft.netcore.app
+i:{8f998b01-2a62-4a14-a527-c675fc01c4a3}:c:\users\pauli\desktop\learning\dotnet\coursesite\api.repository\microsoft.netcore.app
+i:{6f7bdf81-3520-48c2-9fdd-8da15aa91d57}:c:\users\pauli\desktop\learning\dotnet\coursesite\api.contract\microsoft.netcore.app
+i:{c5181c88-b615-457e-a664-d66f9e88f667}:c:\users\pauli\desktop\learning\dotnet\coursesite\api\microsoft.netcore.app
+++AutoMapper (11.0.1)
+i:{76b2086b-e152-4348-8331-e6644ff78884}:>36059
+++Microsoft.Extensions.Configuration.Abstractions (6.0.0)
+i:{76b2086b-e152-4348-8331-e6644ff78884}:>36054
+++Microsoft.IdentityModel.Tokens (6.22.0)
+i:{76b2086b-e152-4348-8331-e6644ff78884}:>36061
+i:{f09c9272-041f-4910-a34e-863b356078b7}:>36055
+++Microsoft.NETCore.App (2.2.8)
+i:{76b2086b-e152-4348-8331-e6644ff78884}:>36062
+++System.IdentityModel.Tokens.Jwt (6.22.0)
+i:{76b2086b-e152-4348-8331-e6644ff78884}:>36058
+++Api.Contract
+i:{76b2086b-e152-4348-8331-e6644ff78884}:c:\users\pauli\desktop\learning\dotnet\coursesite\api.contract\bin\debug\net6.0\api.contract.dll
+i:{8f998b01-2a62-4a14-a527-c675fc01c4a3}:c:\users\pauli\desktop\learning\dotnet\coursesite\api.contract\api.contract.csproj
+i:{00000000-0000-0000-0000-000000000000}:Api.Contract
+++Api.Entities
+i:{76b2086b-e152-4348-8331-e6644ff78884}:c:\users\pauli\desktop\learning\dotnet\coursesite\api.entities\bin\debug\net6.0\api.entities.dll
+i:{00000000-0000-0000-0000-000000000000}:Api.Entities
+i:{f09c9272-041f-4910-a34e-863b356078b7}:c:\users\pauli\desktop\learning\dotnet\coursesite\api.entities\bin\debug\net6.0\api.entities.dll
+i:{8f998b01-2a62-4a14-a527-c675fc01c4a3}:c:\users\pauli\desktop\learning\dotnet\coursesite\api.entities\api.entities.csproj
+i:{6f7bdf81-3520-48c2-9fdd-8da15aa91d57}:c:\users\pauli\desktop\learning\dotnet\coursesite\api.entities\bin\debug\net6.0\api.entities.dll
+++Api.Service.Contract
+i:{76b2086b-e152-4348-8331-e6644ff78884}:c:\users\pauli\desktop\learning\dotnet\coursesite\api.service.contract\bin\debug\net6.0\api.service.contract.dll
+i:{00000000-0000-0000-0000-000000000000}:Api.Service.Contract
+++Api.Shared
+i:{76b2086b-e152-4348-8331-e6644ff78884}:c:\users\pauli\desktop\learning\dotnet\coursesite\api.shared\bin\debug\net6.0\api.shared.dll
+i:{0352ae5e-b053-461c-934e-87b1aabcb7ff}:c:\users\pauli\desktop\learning\dotnet\coursesite\api.shared\bin\debug\net6.0\api.shared.dll
+i:{00000000-0000-0000-0000-000000000000}:Api.Shared
+i:{f09c9272-041f-4910-a34e-863b356078b7}:c:\users\pauli\desktop\learning\dotnet\coursesite\api.shared\bin\debug\net6.0\api.shared.dll
+i:{6f7bdf81-3520-48c2-9fdd-8da15aa91d57}:c:\users\pauli\desktop\learning\dotnet\coursesite\api.shared\bin\debug\net6.0\api.shared.dll
+++Exceptions
+i:{0352ae5e-b053-461c-934e-87b1aabcb7ff}:c:\users\pauli\desktop\learning\dotnet\coursesite\api.entities\exceptions\
+++NotFoundException.cs
+i:{0352ae5e-b053-461c-934e-87b1aabcb7ff}:c:\users\pauli\desktop\learning\dotnet\coursesite\api.entities\exceptions\notfoundexception.cs
+++UserAlreadyExistException.cs
+i:{0352ae5e-b053-461c-934e-87b1aabcb7ff}:c:\users\pauli\desktop\learning\dotnet\coursesite\api.entities\exceptions\useralreadyexistexception.cs
+++UserNotFoundException.cs
+i:{0352ae5e-b053-461c-934e-87b1aabcb7ff}:c:\users\pauli\desktop\learning\dotnet\coursesite\api.entities\exceptions\usernotfoundexception.cs
+++Models
+i:{0352ae5e-b053-461c-934e-87b1aabcb7ff}:c:\users\pauli\desktop\learning\dotnet\coursesite\api.entities\models\
+++ErrorDetails.cs
+i:{0352ae5e-b053-461c-934e-87b1aabcb7ff}:c:\users\pauli\desktop\learning\dotnet\coursesite\api.entities\errordetails.cs
+++Course
+i:{0352ae5e-b053-461c-934e-87b1aabcb7ff}:c:\users\pauli\desktop\learning\dotnet\coursesite\api.entities\models\course\
+++Discussion
+i:{0352ae5e-b053-461c-934e-87b1aabcb7ff}:c:\users\pauli\desktop\learning\dotnet\coursesite\api.entities\models\discussion\
+++Rating
+i:{0352ae5e-b053-461c-934e-87b1aabcb7ff}:c:\users\pauli\desktop\learning\dotnet\coursesite\api.entities\models\rating\
+++User
+i:{0352ae5e-b053-461c-934e-87b1aabcb7ff}:c:\users\pauli\desktop\learning\dotnet\coursesite\api.entities\models\user\
+++BaseEntity.cs
+i:{0352ae5e-b053-461c-934e-87b1aabcb7ff}:c:\users\pauli\desktop\learning\dotnet\coursesite\api.entities\models\baseentity.cs
+++Course.cs
+i:{0352ae5e-b053-461c-934e-87b1aabcb7ff}:c:\users\pauli\desktop\learning\dotnet\coursesite\api.entities\models\course\course.cs
+++CourseElement.cs
+i:{0352ae5e-b053-461c-934e-87b1aabcb7ff}:c:\users\pauli\desktop\learning\dotnet\coursesite\api.entities\models\course\courseelement.cs
+++CourseElementArticleContent.cs
+i:{0352ae5e-b053-461c-934e-87b1aabcb7ff}:c:\users\pauli\desktop\learning\dotnet\coursesite\api.entities\models\course\courseelementarticlecontent.cs
+++CourseElementContent.cs
+i:{0352ae5e-b053-461c-934e-87b1aabcb7ff}:c:\users\pauli\desktop\learning\dotnet\coursesite\api.entities\models\course\courseelementcontent.cs
+++CourseElementVideoContent.cs
+i:{0352ae5e-b053-461c-934e-87b1aabcb7ff}:c:\users\pauli\desktop\learning\dotnet\coursesite\api.entities\models\course\courseelementvideocontent.cs
+++CourseSection.cs
+i:{0352ae5e-b053-461c-934e-87b1aabcb7ff}:c:\users\pauli\desktop\learning\dotnet\coursesite\api.entities\models\course\coursesection.cs
+++PurchasedCourse.cs
+i:{0352ae5e-b053-461c-934e-87b1aabcb7ff}:c:\users\pauli\desktop\learning\dotnet\coursesite\api.entities\models\course\purchasedcourse.cs
+++Answer.cs
+i:{0352ae5e-b053-461c-934e-87b1aabcb7ff}:c:\users\pauli\desktop\learning\dotnet\coursesite\api.entities\models\discussion\answer.cs
+++Question.cs
+i:{0352ae5e-b053-461c-934e-87b1aabcb7ff}:c:\users\pauli\desktop\learning\dotnet\coursesite\api.entities\models\discussion\question.cs
+++Rating.cs
+i:{0352ae5e-b053-461c-934e-87b1aabcb7ff}:c:\users\pauli\desktop\learning\dotnet\coursesite\api.entities\models\rating\rating.cs
+++User.cs
+i:{0352ae5e-b053-461c-934e-87b1aabcb7ff}:c:\users\pauli\desktop\learning\dotnet\coursesite\api.entities\models\user\user.cs
+++DataTransferObjects
+i:{5c7860f5-3ac3-4c41-bcbd-65940e4f1a07}:c:\users\pauli\desktop\learning\dotnet\coursesite\api.shared\datatransferobjects\
+++AnswerDto.cs
+i:{5c7860f5-3ac3-4c41-bcbd-65940e4f1a07}:c:\users\pauli\desktop\learning\dotnet\coursesite\api.shared\datatransferobjects\answerdto.cs
+++AnswerForCreationDto.cs
+i:{5c7860f5-3ac3-4c41-bcbd-65940e4f1a07}:c:\users\pauli\desktop\learning\dotnet\coursesite\api.shared\datatransferobjects\answerforcreationdto.cs
+++CourseDto.cs
+i:{5c7860f5-3ac3-4c41-bcbd-65940e4f1a07}:c:\users\pauli\desktop\learning\dotnet\coursesite\api.shared\datatransferobjects\coursedto.cs
+++CourseElementArticleContentDto.cs
+i:{5c7860f5-3ac3-4c41-bcbd-65940e4f1a07}:c:\users\pauli\desktop\learning\dotnet\coursesite\api.shared\datatransferobjects\courseelementarticlecontentdto.cs
+++CourseElementDto.cs
+i:{5c7860f5-3ac3-4c41-bcbd-65940e4f1a07}:c:\users\pauli\desktop\learning\dotnet\coursesite\api.shared\datatransferobjects\courseelementdto.cs
+++CourseElementForCreationDto.cs
+i:{5c7860f5-3ac3-4c41-bcbd-65940e4f1a07}:c:\users\pauli\desktop\learning\dotnet\coursesite\api.shared\datatransferobjects\courseelementforcreationdto.cs
+++CourseElementForUpdateDto.cs
+i:{5c7860f5-3ac3-4c41-bcbd-65940e4f1a07}:c:\users\pauli\desktop\learning\dotnet\coursesite\api.shared\datatransferobjects\courseelementforupdatedto.cs
+++CourseElementVideoContentDto.cs
+i:{5c7860f5-3ac3-4c41-bcbd-65940e4f1a07}:c:\users\pauli\desktop\learning\dotnet\coursesite\api.shared\datatransferobjects\courseelementvideocontentdto.cs
+++CourseForCreationDto.cs
+i:{5c7860f5-3ac3-4c41-bcbd-65940e4f1a07}:c:\users\pauli\desktop\learning\dotnet\coursesite\api.shared\datatransferobjects\courseforcreationdto.cs
+++CourseForUpdateDto.cs
+i:{5c7860f5-3ac3-4c41-bcbd-65940e4f1a07}:c:\users\pauli\desktop\learning\dotnet\coursesite\api.shared\datatransferobjects\courseforupdatedto.cs
+++CourseSectionDto.cs
+i:{5c7860f5-3ac3-4c41-bcbd-65940e4f1a07}:c:\users\pauli\desktop\learning\dotnet\coursesite\api.shared\datatransferobjects\coursesectiondto.cs
+++CourseSectionForCreationDto.cs
+i:{5c7860f5-3ac3-4c41-bcbd-65940e4f1a07}:c:\users\pauli\desktop\learning\dotnet\coursesite\api.shared\datatransferobjects\coursesectionforcreationdto.cs
+++CourseSectionForUpdateDto.cs
+i:{5c7860f5-3ac3-4c41-bcbd-65940e4f1a07}:c:\users\pauli\desktop\learning\dotnet\coursesite\api.shared\datatransferobjects\coursesectionforupdatedto.cs
+++ElementContentDto.cs
+i:{5c7860f5-3ac3-4c41-bcbd-65940e4f1a07}:c:\users\pauli\desktop\learning\dotnet\coursesite\api.shared\datatransferobjects\elementcontentdto.cs
+++QuestionDto.cs
+i:{5c7860f5-3ac3-4c41-bcbd-65940e4f1a07}:c:\users\pauli\desktop\learning\dotnet\coursesite\api.shared\datatransferobjects\questiondto.cs
+++QuestionForCreationDto.cs
+i:{5c7860f5-3ac3-4c41-bcbd-65940e4f1a07}:c:\users\pauli\desktop\learning\dotnet\coursesite\api.shared\datatransferobjects\questionforcreationdto.cs
+++RatingDto.cs
+i:{5c7860f5-3ac3-4c41-bcbd-65940e4f1a07}:c:\users\pauli\desktop\learning\dotnet\coursesite\api.shared\datatransferobjects\ratingdto.cs
+++RatingForCreationDto.cs
+i:{5c7860f5-3ac3-4c41-bcbd-65940e4f1a07}:c:\users\pauli\desktop\learning\dotnet\coursesite\api.shared\datatransferobjects\ratingforcreationdto.cs
+++UserDto.cs
+i:{5c7860f5-3ac3-4c41-bcbd-65940e4f1a07}:c:\users\pauli\desktop\learning\dotnet\coursesite\api.shared\datatransferobjects\userdto.cs
+++UserForLoginDto.cs
+i:{5c7860f5-3ac3-4c41-bcbd-65940e4f1a07}:c:\users\pauli\desktop\learning\dotnet\coursesite\api.shared\datatransferobjects\userforlogindto.cs
+++UserForRegisterDto.cs
+i:{5c7860f5-3ac3-4c41-bcbd-65940e4f1a07}:c:\users\pauli\desktop\learning\dotnet\coursesite\api.shared\datatransferobjects\userforregisterdto.cs
+++IAuthService.cs
+i:{f09c9272-041f-4910-a34e-863b356078b7}:c:\users\pauli\desktop\learning\dotnet\coursesite\api.service.contract\iauthservice.cs
+++ICourseService.cs
+i:{f09c9272-041f-4910-a34e-863b356078b7}:c:\users\pauli\desktop\learning\dotnet\coursesite\api.service.contract\icourseservice.cs
+++IDiscussionService.cs
+i:{f09c9272-041f-4910-a34e-863b356078b7}:c:\users\pauli\desktop\learning\dotnet\coursesite\api.service.contract\idiscussionservice.cs
+++IRatingService.cs
+i:{f09c9272-041f-4910-a34e-863b356078b7}:c:\users\pauli\desktop\learning\dotnet\coursesite\api.service.contract\iratingservice.cs
+++IServiceManager.cs
+i:{f09c9272-041f-4910-a34e-863b356078b7}:c:\users\pauli\desktop\learning\dotnet\coursesite\api.service.contract\iservicemanager.cs
+++IUserService.cs
+i:{f09c9272-041f-4910-a34e-863b356078b7}:c:\users\pauli\desktop\learning\dotnet\coursesite\api.service.contract\iuserservice.cs
+++Api.Repository
+i:{00000000-0000-0000-0000-000000000000}:Api.Repository
+i:{c5181c88-b615-457e-a664-d66f9e88f667}:c:\users\pauli\desktop\learning\dotnet\coursesite\api.repository\bin\debug\net6.0\api.repository.dll
+++AuthRepository.cs
+i:{8f998b01-2a62-4a14-a527-c675fc01c4a3}:c:\users\pauli\desktop\learning\dotnet\coursesite\api.repository\authrepository.cs
+++CourseRepository.cs
+i:{8f998b01-2a62-4a14-a527-c675fc01c4a3}:c:\users\pauli\desktop\learning\dotnet\coursesite\api.repository\courserepository.cs
+++DiscussionRepository.cs
+i:{8f998b01-2a62-4a14-a527-c675fc01c4a3}:c:\users\pauli\desktop\learning\dotnet\coursesite\api.repository\discussionrepository.cs
+++RatingRepository.cs
+i:{8f998b01-2a62-4a14-a527-c675fc01c4a3}:c:\users\pauli\desktop\learning\dotnet\coursesite\api.repository\ratingrepository.cs
+++RepositoryManager.cs
+i:{8f998b01-2a62-4a14-a527-c675fc01c4a3}:c:\users\pauli\desktop\learning\dotnet\coursesite\api.repository\repositorymanager.cs
+++MySqlConnector (2.1.7)
+i:{8f998b01-2a62-4a14-a527-c675fc01c4a3}:>35989
+++IAuthRepository.cs
+i:{6f7bdf81-3520-48c2-9fdd-8da15aa91d57}:c:\users\pauli\desktop\learning\dotnet\coursesite\api.contract\iauthrepository.cs
+++ICourseRepository.cs
+i:{6f7bdf81-3520-48c2-9fdd-8da15aa91d57}:c:\users\pauli\desktop\learning\dotnet\coursesite\api.contract\icourserepository.cs
+++IDiscussionRepository.cs
+i:{6f7bdf81-3520-48c2-9fdd-8da15aa91d57}:c:\users\pauli\desktop\learning\dotnet\coursesite\api.contract\idiscussionrepository.cs
+++IRatingRepository.cs
+i:{6f7bdf81-3520-48c2-9fdd-8da15aa91d57}:c:\users\pauli\desktop\learning\dotnet\coursesite\api.contract\iratingrepository.cs
+++IRepositoryManager.cs
+i:{6f7bdf81-3520-48c2-9fdd-8da15aa91d57}:c:\users\pauli\desktop\learning\dotnet\coursesite\api.contract\irepositorymanager.cs
+++API
+i:{00000000-0000-0000-0000-000000000000}:API
+++Connected Services 
+i:{c5181c88-b615-457e-a664-d66f9e88f667}:>28573
+++Properties
+i:{c5181c88-b615-457e-a664-d66f9e88f667}:c:\users\pauli\desktop\learning\dotnet\coursesite\api\properties\
+++wwwroot
+i:{c5181c88-b615-457e-a664-d66f9e88f667}:c:\users\pauli\desktop\learning\dotnet\coursesite\api\wwwroot\
+++Controllers
+i:{c5181c88-b615-457e-a664-d66f9e88f667}:c:\users\pauli\desktop\learning\dotnet\coursesite\api\controllers\
+++AuthController.cs
+i:{c5181c88-b615-457e-a664-d66f9e88f667}:c:\users\pauli\desktop\learning\dotnet\coursesite\api\controllers\authcontroller.cs
+++BaseApiController.cs
+i:{c5181c88-b615-457e-a664-d66f9e88f667}:c:\users\pauli\desktop\learning\dotnet\coursesite\api\controllers\baseapicontroller.cs
+++CoursesController.cs
+i:{c5181c88-b615-457e-a664-d66f9e88f667}:c:\users\pauli\desktop\learning\dotnet\coursesite\api\controllers\coursescontroller.cs
+++DiscussionController.cs
+i:{c5181c88-b615-457e-a664-d66f9e88f667}:c:\users\pauli\desktop\learning\dotnet\coursesite\api\controllers\discussioncontroller.cs
+++RatingController.cs
+i:{c5181c88-b615-457e-a664-d66f9e88f667}:c:\users\pauli\desktop\learning\dotnet\coursesite\api\controllers\ratingcontroller.cs
+++UsersController.cs
+i:{c5181c88-b615-457e-a664-d66f9e88f667}:c:\users\pauli\desktop\learning\dotnet\coursesite\api\controllers\userscontroller.cs
+++Extensions
+i:{c5181c88-b615-457e-a664-d66f9e88f667}:c:\users\pauli\desktop\learning\dotnet\coursesite\api\extensions\
+++ExceptionMiddlewareExtensions.cs
+i:{c5181c88-b615-457e-a664-d66f9e88f667}:c:\users\pauli\desktop\learning\dotnet\coursesite\api\extensions\exceptionmiddlewareextensions.cs
+++ServiceExtensions.cs
+i:{c5181c88-b615-457e-a664-d66f9e88f667}:c:\users\pauli\desktop\learning\dotnet\coursesite\api\extensions\serviceextensions.cs
+++Pages
+i:{c5181c88-b615-457e-a664-d66f9e88f667}:c:\users\pauli\desktop\learning\dotnet\coursesite\api\pages\
+++.gitignore
+i:{c5181c88-b615-457e-a664-d66f9e88f667}:c:\users\pauli\desktop\learning\dotnet\coursesite\clientapp\.gitignore
+++appsettings.json
+i:{c5181c88-b615-457e-a664-d66f9e88f667}:c:\users\pauli\desktop\learning\dotnet\coursesite\api\appsettings.json
+++MappingProfile.cs
+i:{c5181c88-b615-457e-a664-d66f9e88f667}:c:\users\pauli\desktop\learning\dotnet\coursesite\api\mappingprofile.cs
+++Program.cs
+i:{c5181c88-b615-457e-a664-d66f9e88f667}:c:\users\pauli\desktop\learning\dotnet\coursesite\api\program.cs
+++No service dependencies discovered
+i:{c5181c88-b615-457e-a664-d66f9e88f667}:>28645
+++launchSettings.json
+i:{c5181c88-b615-457e-a664-d66f9e88f667}:c:\users\pauli\desktop\learning\dotnet\coursesite\api\properties\launchsettings.json
+++images
+i:{c5181c88-b615-457e-a664-d66f9e88f667}:c:\users\pauli\desktop\learning\dotnet\coursesite\api\wwwroot\images\
+++favicon.ico
+i:{c5181c88-b615-457e-a664-d66f9e88f667}:c:\users\pauli\desktop\learning\dotnet\coursesite\api\wwwroot\favicon.ico
+++_ViewImports.cshtml
+i:{c5181c88-b615-457e-a664-d66f9e88f667}:c:\users\pauli\desktop\learning\dotnet\coursesite\api\pages\_viewimports.cshtml
+++Error.cshtml
+i:{c5181c88-b615-457e-a664-d66f9e88f667}:c:\users\pauli\desktop\learning\dotnet\coursesite\api\pages\error.cshtml
+++appsettings.Development.json
+i:{c5181c88-b615-457e-a664-d66f9e88f667}:c:\users\pauli\desktop\learning\dotnet\coursesite\api\appsettings.development.json
+++Microsoft.AspNetCore.Analyzers
+i:{c5181c88-b615-457e-a664-d66f9e88f667}:c:\program files\dotnet\sdk\6.0.202\sdks\microsoft.net.sdk.web\analyzers\cs\microsoft.aspnetcore.analyzers.dll
+++Microsoft.AspNetCore.App.Analyzers
+i:{c5181c88-b615-457e-a664-d66f9e88f667}:c:\program files\dotnet\packs\microsoft.aspnetcore.app.ref\6.0.4\analyzers\dotnet\cs\microsoft.aspnetcore.app.analyzers.dll
+++Microsoft.AspNetCore.App.CodeFixes
+i:{c5181c88-b615-457e-a664-d66f9e88f667}:c:\program files\dotnet\packs\microsoft.aspnetcore.app.ref\6.0.4\analyzers\dotnet\cs\microsoft.aspnetcore.app.codefixes.dll
+++Microsoft.AspNetCore.Components.Analyzers
+i:{c5181c88-b615-457e-a664-d66f9e88f667}:c:\program files\dotnet\sdk\6.0.202\sdks\microsoft.net.sdk.web\analyzers\cs\microsoft.aspnetcore.components.analyzers.dll
+++Microsoft.AspNetCore.Mvc.Analyzers
+i:{c5181c88-b615-457e-a664-d66f9e88f667}:c:\program files\dotnet\sdk\6.0.202\sdks\microsoft.net.sdk.web\analyzers\cs\microsoft.aspnetcore.mvc.analyzers.dll
+++Microsoft.AspNetCore.Razor.SourceGenerator.Tooling.Internal
+i:{c5181c88-b615-457e-a664-d66f9e88f667}:c:\program files\dotnet\sdk\6.0.202\sdks\microsoft.net.sdk.razor\source-generators\microsoft.aspnetcore.razor.sourcegenerator.tooling.internal.dll
+++Microsoft.Extensions.Logging.Generators
+i:{c5181c88-b615-457e-a664-d66f9e88f667}:c:\program files\dotnet\packs\microsoft.aspnetcore.app.ref\6.0.4\analyzers\dotnet\roslyn4.0\cs\microsoft.extensions.logging.generators.dll
+++Microsoft.NET.Sdk.Razor.SourceGenerators
+i:{c5181c88-b615-457e-a664-d66f9e88f667}:c:\program files\dotnet\sdk\6.0.202\sdks\microsoft.net.sdk.razor\source-generators\microsoft.net.sdk.razor.sourcegenerators.dll
+++Microsoft.AspNetCore.App
+i:{c5181c88-b615-457e-a664-d66f9e88f667}:c:\users\pauli\desktop\learning\dotnet\coursesite\api\microsoft.aspnetcore.app
+++Microsoft.AspNetCore.Authentication.JwtBearer (6.0.5)
+i:{c5181c88-b615-457e-a664-d66f9e88f667}:>36026
+++Microsoft.AspNetCore.SpaProxy (6.0.4)
+i:{c5181c88-b615-457e-a664-d66f9e88f667}:>36025
+++Swashbuckle.AspNetCore.Swagger (6.3.1)
+i:{c5181c88-b615-457e-a664-d66f9e88f667}:>36023
+++Swashbuckle.AspNetCore.SwaggerGen (6.3.1)
+i:{c5181c88-b615-457e-a664-d66f9e88f667}:>36024
+++Swashbuckle.AspNetCore.SwaggerUI (6.3.1)
+i:{c5181c88-b615-457e-a664-d66f9e88f667}:>36027
+++courses
+i:{c5181c88-b615-457e-a664-d66f9e88f667}:c:\users\pauli\desktop\learning\dotnet\coursesite\api\wwwroot\images\courses\
+++Error.cshtml.cs
+i:{c5181c88-b615-457e-a664-d66f9e88f667}:c:\users\pauli\desktop\learning\dotnet\coursesite\api\pages\error.cshtml.cs
+++image1.png
+i:{c5181c88-b615-457e-a664-d66f9e88f667}:c:\users\pauli\desktop\learning\dotnet\coursesite\api\wwwroot\images\courses\image1.png
+++image2.png
+i:{c5181c88-b615-457e-a664-d66f9e88f667}:c:\users\pauli\desktop\learning\dotnet\coursesite\api\wwwroot\images\courses\image2.png
+++image3.png
+i:{c5181c88-b615-457e-a664-d66f9e88f667}:c:\users\pauli\desktop\learning\dotnet\coursesite\api\wwwroot\images\courses\image3.png

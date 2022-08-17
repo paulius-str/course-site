@@ -1,0 +1,17 @@
+C:\Users\pauli\Desktop\Learning\dotnet\CourseSite\Api.Contract\bin\Debug\net6.0\Api.Contract.deps.json
+C:\Users\pauli\Desktop\Learning\dotnet\CourseSite\Api.Contract\bin\Debug\net6.0\Api.Contract.dll
+C:\Users\pauli\Desktop\Learning\dotnet\CourseSite\Api.Contract\bin\Debug\net6.0\Api.Contract.pdb
+C:\Users\pauli\Desktop\Learning\dotnet\CourseSite\Api.Contract\bin\Debug\net6.0\Api.Entities.dll
+C:\Users\pauli\Desktop\Learning\dotnet\CourseSite\Api.Contract\bin\Debug\net6.0\Api.Shared.dll
+C:\Users\pauli\Desktop\Learning\dotnet\CourseSite\Api.Contract\bin\Debug\net6.0\Api.Entities.pdb
+C:\Users\pauli\Desktop\Learning\dotnet\CourseSite\Api.Contract\bin\Debug\net6.0\Api.Shared.pdb
+C:\Users\pauli\Desktop\Learning\dotnet\CourseSite\Api.Contract\obj\Debug\net6.0\Api.Contract.csproj.AssemblyReference.cache
+C:\Users\pauli\Desktop\Learning\dotnet\CourseSite\Api.Contract\obj\Debug\net6.0\Api.Contract.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\pauli\Desktop\Learning\dotnet\CourseSite\Api.Contract\obj\Debug\net6.0\Api.Contract.AssemblyInfoInputs.cache
+C:\Users\pauli\Desktop\Learning\dotnet\CourseSite\Api.Contract\obj\Debug\net6.0\Api.Contract.AssemblyInfo.cs
+C:\Users\pauli\Desktop\Learning\dotnet\CourseSite\Api.Contract\obj\Debug\net6.0\Api.Contract.csproj.CoreCompileInputs.cache
+C:\Users\pauli\Desktop\Learning\dotnet\CourseSite\Api.Contract\obj\Debug\net6.0\Api.Contract.csproj.CopyComplete
+C:\Users\pauli\Desktop\Learning\dotnet\CourseSite\Api.Contract\obj\Debug\net6.0\Api.Contract.dll
+C:\Users\pauli\Desktop\Learning\dotnet\CourseSite\Api.Contract\obj\Debug\net6.0\refint\Api.Contract.dll
+C:\Users\pauli\Desktop\Learning\dotnet\CourseSite\Api.Contract\obj\Debug\net6.0\Api.Contract.pdb
+C:\Users\pauli\Desktop\Learning\dotnet\CourseSite\Api.Contract\obj\Debug\net6.0\ref\Api.Contract.dll

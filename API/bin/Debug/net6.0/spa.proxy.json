@@ -2,7 +2,7 @@
 "SpaProxyServer": {
 "ServerUrl": "https://localhost:44487",
 "LaunchCommand": "npm start",
-"WorkingDirectory": "C:\\Users\\pauli\\Desktop\\Studijos\\4sem\\Duomenu baziu praktika\\Project\\API\\..\\ClientApp\\",
+"WorkingDirectory": "C:\\Users\\pauli\\Desktop\\Learning\\dotnet\\CourseSite\\API\\..\\ClientApp\\",
 "MaxTimeoutInSeconds": "120"
 }
 }

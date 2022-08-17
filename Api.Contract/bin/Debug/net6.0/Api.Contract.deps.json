@@ -1,0 +1,50 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v6.0",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v6.0": {
+      "Api.Contract/1.0.0": {
+        "dependencies": {
+          "Api.Entities": "1.0.0",
+          "Api.Shared": "1.0.0"
+        },
+        "runtime": {
+          "Api.Contract.dll": {}
+        }
+      },
+      "Api.Entities/1.0.0": {
+        "dependencies": {
+          "Api.Shared": "1.0.0"
+        },
+        "runtime": {
+          "Api.Entities.dll": {}
+        }
+      },
+      "Api.Shared/1.0.0": {
+        "runtime": {
+          "Api.Shared.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "Api.Contract/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "Api.Entities/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "Api.Shared/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}

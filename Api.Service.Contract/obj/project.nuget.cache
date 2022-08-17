@@ -1,0 +1,14 @@
+{
+  "version": 2,
+  "dgSpecHash": "acwnqRcHmmRd2MzRGHh95Iqc9z0WRK/eEpKhiO8Qfj4hVx6RsEWX0+Ez6qgX/X5G7WJLQWuYV1IMKr6T+GKLfw==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\pauli\\Desktop\\Learning\\dotnet\\CourseSite\\Api.Service.Contract\\Api.Service.Contract.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\pauli\\.nuget\\packages\\microsoft.csharp\\4.5.0\\microsoft.csharp.4.5.0.nupkg.sha512",
+    "C:\\Users\\pauli\\.nuget\\packages\\microsoft.identitymodel.abstractions\\6.22.0\\microsoft.identitymodel.abstractions.6.22.0.nupkg.sha512",
+    "C:\\Users\\pauli\\.nuget\\packages\\microsoft.identitymodel.logging\\6.22.0\\microsoft.identitymodel.logging.6.22.0.nupkg.sha512",
+    "C:\\Users\\pauli\\.nuget\\packages\\microsoft.identitymodel.tokens\\6.22.0\\microsoft.identitymodel.tokens.6.22.0.nupkg.sha512",
+    "C:\\Users\\pauli\\.nuget\\packages\\system.security.cryptography.cng\\4.5.0\\system.security.cryptography.cng.4.5.0.nupkg.sha512"
+  ],
+  "logs": []
+}

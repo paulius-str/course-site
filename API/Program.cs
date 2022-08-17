@@ -1,26 +1,28 @@
-using API.Data;
-using API.Interfaces;
+using Api.Repository;
+using Api.Contract;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.IdentityModel.Tokens;
 using MySqlConnector;
 using System.Text;
+using API.Extensions;
+using AutoMapper;
 
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
-
 builder.Services.AddControllersWithViews();
 builder.Services.AddTransient<MySqlConnection>(_ => new MySqlConnection(
     builder.Configuration.GetConnectionString("Default")
     ));
 
-builder.Services.AddScoped<ICourseRepository, CourseRepository>();
-builder.Services.AddScoped<IAuthRepository, AuthRepository>();
-builder.Services.AddScoped<IRatingRepository, RatingRepository>();
-builder.Services.AddScoped<IDiscussionRepository, DiscussionRepository>();
-
+//builder.Services.AddAutoMapper(typeof(Program));
+builder.Services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
+//builder.Services.AddMapper();
+builder.Services.AddRepository();
+builder.Services.AddServices();
+
 
 
 builder.Services.AddCors(options =>
@@ -45,6 +47,8 @@ builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme).AddJw
 
 var app = builder.Build();
 
+app.ConfigureExceptionHandler();
+
 // Configure the HTTP request pipeline.
 if (!app.Environment.IsDevelopment())
 {
@@ -58,12 +62,6 @@ if (!app.Environment.IsDevelopment())
     });
 
 }
-
-// app.UseSwagger();
-// app.UseSwaggerUI(options =>
-// {
-//     options.SwaggerEndpoint("/swagger/v1/swagger.json", "My API V1");
-// });
 
 app.UseHttpsRedirection();
 app.UseStaticFiles();

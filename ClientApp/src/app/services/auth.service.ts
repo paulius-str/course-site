@@ -78,6 +78,7 @@ export class AuthService {
 
   private readClaims(){
     const claims = this.jwtHelper.decodeToken(this.token);
-    return {id: claims.nameid, email: claims.email, firstName: claims.unique_name, lastName: claims.family_name}
+    console.log(claims.firstName);
+    return {id: claims.nameid, emailAddress: claims.email, firstName: claims.unique_name, lastName: claims.family_name}
   }
 }

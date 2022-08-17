@@ -1,6 +1,6 @@
 export interface IUser{
     id: string,
-    email: string,
+    emailAddress: string,
     firstName: string,
     lastName: string,
     isPublisher?: boolean

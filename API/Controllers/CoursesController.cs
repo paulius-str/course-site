@@ -1,84 +1,76 @@
-﻿using API.DTOs;
-using API.Entities;
-using API.Entities.CourseEntities;
-using API.Interfaces;
+﻿using Api.Shared;
+using Api.Entities;
+using Api.Entities.CourseEntities;
+using Api.Contract;
 using Microsoft.AspNetCore.Mvc;
 using System.Security.Claims;
+using Api.Shared.DataTransferObjects;
+using Api.Service.Contract;
 
 namespace API.Controllers
 {
     public class CoursesController : BaseApiController
     {
-        private readonly ICourseRepository _courseRepository;
+        private readonly IServiceManager _serviceManager;
 
-        public CoursesController(ICourseRepository courseRepository)
-        { 
-            this._courseRepository = courseRepository;
+        public CoursesController(IServiceManager serviceManager)
+        {
+            _serviceManager = serviceManager;
         }
 
         [HttpGet]
-        public async Task<ActionResult<IReadOnlyList<Course>>> GetPublishedCourses()
+        public async Task<ActionResult<IReadOnlyList<CourseDto>>> GetPublishedCourses()
         {
-            var result = await _courseRepository.GetAllPublishedCourses();
-
-            if (result == null) return new NotFoundResult();
+            var result = await _serviceManager.CourseService.GetAllPublishedCoursesAsync();
 
             return Ok(result);
         }
 
         [HttpGet("user/{userid}")]
-        public async Task<ActionResult<IReadOnlyList<Course>>> GetUserCourses(int userId)
+        public async Task<ActionResult<IReadOnlyList<CourseDto>>> GetUserCourses(int userId)
         {
-            var result = await _courseRepository.GetUserCourses(userId);
-      
-            if (result == null) return new NotFoundResult();
+            var result = await _serviceManager.CourseService.GetAllUserCoursesAsync(userId);
 
             return Ok(result);
         }
 
         [HttpGet("published/{courseId}")]
-        public async Task<ActionResult<IReadOnlyList<Course>>> GetPublishedCourse([FromRoute]int courseId)
+        public async Task<ActionResult<CourseDto>> GetPublishedCourse([FromRoute]int courseId)
         {
-            var result = await _courseRepository.GetPublishedCourse(courseId);
-           
-            if (result == null) return new NotFoundResult();
+            var result = await _serviceManager.CourseService.GetPublishedCourseAsync(courseId);
 
             return Ok(result);
         }
 
         [HttpPost("published")]
-        public async Task<IActionResult> PublishCourse(Course course)
+        public async Task<ActionResult> PublishCourse(CourseDto course)
         {
-            var result = await _courseRepository.PublishCourse(course.Id);
+            var result = await _serviceManager.CourseService.CreatePublishedCourseAsync(course);
 
-            return Ok();
+            return Ok(new {success = result});
         }
 
         [HttpDelete("published/{courseId}")]
         public async Task<IActionResult> UnpublishCourse(int courseId)
         {
-            var result = await _courseRepository.UnpublishCourse(courseId);
+            var result = await _serviceManager.CourseService.RemovePublishedCourseAsync(courseId);
 
-            return Ok();
+            return Ok(new {success = result});
         }
 
         [HttpGet("{courseId}/sections")]
-        public async Task<ActionResult<IReadOnlyList<CourseSection>>> GetCourseSections(int courseId)
+        public async Task<ActionResult<IReadOnlyList<CourseSectionDto>>> GetCourseSections(int courseId)
         {
-            var result = await _courseRepository.GetCourseSections(courseId);
-
-            if (result == null) return new NotFoundResult();
+            var result = await _serviceManager.CourseService.GetCourseSectionsAsync(courseId);
 
             return Ok(result);
         }
 
 
         [HttpGet("sections/elements/{sectionId}")]
-        public async Task<ActionResult<IReadOnlyList<CourseElement>>> GetSectionElements(int sectionId)
+        public async Task<ActionResult<IReadOnlyList<CourseElementDto>>> GetSectionElements(int sectionId)
         {
-            var result = await _courseRepository.GetCourseElements(sectionId);
-
-            if (result == null) return new NotFoundResult();
+            var result = await _serviceManager.CourseService.GetSectionElementsAsync(sectionId);
 
             return Ok(result);
         }
@@ -86,45 +78,23 @@ namespace API.Controllers
         [HttpGet("elements/content/{elementId}")]
         public async Task<ActionResult<ElementContentDto>> GetElementContent(int elementId)
         {
-            var videoContent = await _courseRepository.GetElementVideoContent(elementId);
-            var articleContent = await _courseRepository.GetElementArticleContent(elementId);
-
-            ElementContentDto result = new ElementContentDto();
-            result.ArticleContent = articleContent;
-            result.VideoContent = videoContent;
-
-            if (result.VideoContent == null && result.ArticleContent == null) return new NotFoundResult();
+            var result = _serviceManager.CourseService.GetElementContentAsync(elementId);
 
             return Ok(result);
         }
 
-
         [HttpPost("elements/content/{elementId}")]
         public async Task<ActionResult> SetElementContent([FromBody]ElementContentDto elementContent, [FromRoute]int elementId)
         {
-            var videoContent = await _courseRepository.GetElementVideoContent(elementId);
-            var articleContent = await _courseRepository.GetElementArticleContent(elementId);
-
-            if (videoContent.Id == 0)
-                await _courseRepository.CreateElementVideoContent(elementContent.VideoContent, elementId);
-            else
-                await _courseRepository.UpdateElementVideoContent(elementContent.VideoContent);
-                
-
-            if(articleContent.Id == 0)
-                await _courseRepository.CreateElementArticleContent(elementContent.ArticleContent, elementId);
-            else
-                await _courseRepository.UpdateElementArticleContent(elementContent.ArticleContent);       
+            var result = await _serviceManager.CourseService.CreateOrUpdateElementContentAsync(elementContent, elementId);     
             
-            return Ok(articleContent);
+            return Ok(new {success = result});
         }
 
         [HttpGet("{courseId}/authors")]
-        public async Task<ActionResult<IReadOnlyList<UserDto>>> GetCourseAuthors(int courseId)
+        public async Task<ActionResult<IReadOnlyList<CourseDto>>> GetCourseAuthors(int courseId)
         {
-            var result = await _courseRepository.GetCourseAuthors(courseId);
-
-            if (result == null) return new NotFoundResult();
+            var result = await _serviceManager.CourseService.GetCourseAuthorsAsync(courseId);
 
             return Ok(result);
         }
@@ -132,132 +102,107 @@ namespace API.Controllers
         [HttpGet("author/{userId}")]
         public async Task<ActionResult<IReadOnlyList<UserDto>>> GetAuthorCourses(int userId)
         {
-            var result = await _courseRepository.GetAuthorUserCourses(userId);
-
-            if (result == null) return new NotFoundResult();
+            var result = await _serviceManager.CourseService.GetAuthorCoursesAsync(userId);
 
             return Ok(result);
         }
 
         [HttpGet("elements/completed/{userId}/{courseId}")]
-        public async Task<ActionResult<IReadOnlyList<CourseElement>>> GetCompletedElements(int userId, int courseId)
+        public async Task<ActionResult<IReadOnlyList<CourseElementDto>>> GetCompletedElements(int userId, int courseId)
         {
-            var result = await _courseRepository.GetCompletedCourseElements(userId, courseId);
-
-            if (result == null) return new NotFoundResult();
+            var result = await _serviceManager.CourseService.GetCompletedCourseElementsAsync(userId, courseId);
 
             return Ok(result);
         }
 
         [HttpPost]
-        public async Task<ActionResult<Course>> CreateCourse(CourseForCreationDto course)
+        public async Task<ActionResult<CourseDto>> CreateCourse(CourseForCreationDto course)
         {
-           var courseToCreate = new Course() 
-           {
-               Name = course.CourseName,
-               Description = course.CourseDescription,
-               Price = course.CoursePrice
-           };
-            var result = await _courseRepository.CreateCourse(courseToCreate, course.UserId);
+            var result = await _serviceManager.CourseService.CreateCourseAsync(course);
 
             return Ok(result);
         }
 
         [HttpPut]
-        public async Task<ActionResult<Course>> UpdateCourse(Course course)
+        public async Task<ActionResult<CourseDto>> UpdateCourse(CourseForUpdateDto course)
         {
-            var result = await _courseRepository.UpdateCourse(course);
-
-            if (result == null) return new UnsupportedMediaTypeResult();
+            var result = await _serviceManager.CourseService.UpdateCourseAsync(course);
 
             return Ok(result);
         }
 
 
         [HttpDelete("{courseId}")]
-        public async Task<ActionResult<Course>> DeleteCourse(int courseId)
+        public async Task<ActionResult> DeleteCourse(int courseId)
         {
-            var result = await _courseRepository.DeleteCourse(courseId);
+            var result = await _serviceManager.CourseService.DeleteCourseAsync(courseId);
 
-            if (result == false) return new NotFoundResult();
-
-            return Ok(result);
+            return Ok(new {success = result});
         }
 
         [HttpPost("sections")]
-        public async Task<ActionResult<CourseSection>> CreateSection(CourseSection section)
+        public async Task<ActionResult<CourseSectionDto>> CreateSection(CourseSectionForCreationDto section)
         {
-            var result = await _courseRepository.CreateSection(section);
-
-            if (result == null) return new UnsupportedMediaTypeResult();
+            var result = await _serviceManager.CourseService.CreateSectionAsync(section);
 
             return Ok(result);
         }
 
         [HttpPut("sections")]
-        public async Task<ActionResult<CourseSection>> UpdateSection(Course section)
+        public async Task<ActionResult<CourseSectionDto>> UpdateSection(CourseSectionForUpdateDto section)
         {
-            var result = await _courseRepository.UpdateCourse(section);
-
-            if (result == null) return new UnsupportedMediaTypeResult();
+            var result = await _serviceManager.CourseService.UpdateSectionAsync(section);
 
             return Ok(result);
         }
 
-
         [HttpDelete("sections/{sectionId}")]
-        public async Task<ActionResult<CourseSection>> DeleteSection(int sectionId)
+        public async Task<ActionResult> DeleteSection(int sectionId)
         {
-            var result = await _courseRepository.DeleteSection(sectionId);
-
-            if (result == false) return new NotFoundResult();
+            var result = await _serviceManager.CourseService.DeleteSectionAsync(sectionId);
 
             return Ok(result);
         }
 
         [HttpPost("elements")]
-        public async Task<ActionResult<CourseSection>> CreateElement(CourseElement element)
+        public async Task<ActionResult<CourseElementDto>> CreateElement(CourseElementForCreationDto element)
         {
-            var result = await _courseRepository.CreateElement(element);
-
-            if (result == null) return new UnsupportedMediaTypeResult();
+            var result = await _serviceManager.CourseService.CreateElementAsync(element);
 
             return Ok(result);
         }
 
         [HttpPut("elements/{elementId}")]
-        public async Task<ActionResult<CourseElement>> EditElement(CourseElement element)
+        public async Task<ActionResult<CourseElementDto>> EditElement(CourseElementForUpdateDto element)
         {
-            var result = await _courseRepository.UpdateElement(element);
-
-            if(result == null) return new NotFoundResult();
+            var result = await _serviceManager.CourseService.UpdateElementAsync(element);
 
             return Ok(result);
         }
 
 
         [HttpDelete("elements/{elementId}")]
-        public async Task<ActionResult<CourseElement>> DeleteElement(CourseElement element)
+        public async Task<ActionResult> DeleteElement(CourseElementDto element)
         {
-            var result = await _courseRepository.DeleteElement(element.Id);
+            var result = await _serviceManager.CourseService.DeleteElementAsync(element.Id);
 
             return Ok(result);
         }
 
         [HttpPost("elements/completed/{userId}")]
-        public async Task<ActionResult<CourseElement>> AddCompletedElement(CourseElement element, int userId)
+        public async Task<ActionResult> AddCompletedElementForUser(CourseElementDto element, int userId)
         {
-            var result = await _courseRepository.AddCompletedElement(element.Id, userId);
+            var result = await _serviceManager.CourseService.AddCompletedElementForUserAsync(element, userId);
 
-            return Ok(result);
+            return Ok(new {success = result});
         }
 
         [HttpPost("purchased/{userId}")]
-        public async Task<ActionResult<CourseElement>> AddPurchasedCourse(Course course, int userId)
+        public async Task<ActionResult<CourseElementDto>> AddPurchasedCourseForUser(CourseDto course, int userId)
         {
-            var result = await _courseRepository.AddPurchasedCourse(course, userId);
+            var result = await _serviceManager.CourseService.AddPurchasedCourseForUserAsync(course, userId);
 
-            return Ok(result);
+            return Ok(new {success = result});
         }
     }
 }

@@ -1,0 +1,17 @@
+C:\Users\pauli\Desktop\Learning\dotnet\CourseSite\Api.Service.Contract\bin\Debug\net6.0\Api.Service.Contract.deps.json
+C:\Users\pauli\Desktop\Learning\dotnet\CourseSite\Api.Service.Contract\bin\Debug\net6.0\Api.Service.Contract.dll
+C:\Users\pauli\Desktop\Learning\dotnet\CourseSite\Api.Service.Contract\bin\Debug\net6.0\Api.Service.Contract.pdb
+C:\Users\pauli\Desktop\Learning\dotnet\CourseSite\Api.Service.Contract\bin\Debug\net6.0\Api.Entities.dll
+C:\Users\pauli\Desktop\Learning\dotnet\CourseSite\Api.Service.Contract\bin\Debug\net6.0\Api.Shared.dll
+C:\Users\pauli\Desktop\Learning\dotnet\CourseSite\Api.Service.Contract\bin\Debug\net6.0\Api.Entities.pdb
+C:\Users\pauli\Desktop\Learning\dotnet\CourseSite\Api.Service.Contract\bin\Debug\net6.0\Api.Shared.pdb
+C:\Users\pauli\Desktop\Learning\dotnet\CourseSite\Api.Service.Contract\obj\Debug\net6.0\Api.Service.Contract.csproj.AssemblyReference.cache
+C:\Users\pauli\Desktop\Learning\dotnet\CourseSite\Api.Service.Contract\obj\Debug\net6.0\Api.Service.Contract.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\pauli\Desktop\Learning\dotnet\CourseSite\Api.Service.Contract\obj\Debug\net6.0\Api.Service.Contract.AssemblyInfoInputs.cache
+C:\Users\pauli\Desktop\Learning\dotnet\CourseSite\Api.Service.Contract\obj\Debug\net6.0\Api.Service.Contract.AssemblyInfo.cs
+C:\Users\pauli\Desktop\Learning\dotnet\CourseSite\Api.Service.Contract\obj\Debug\net6.0\Api.Service.Contract.csproj.CoreCompileInputs.cache
+C:\Users\pauli\Desktop\Learning\dotnet\CourseSite\Api.Service.Contract\obj\Debug\net6.0\Api.Service.Contract.csproj.CopyComplete
+C:\Users\pauli\Desktop\Learning\dotnet\CourseSite\Api.Service.Contract\obj\Debug\net6.0\Api.Service.Contract.dll
+C:\Users\pauli\Desktop\Learning\dotnet\CourseSite\Api.Service.Contract\obj\Debug\net6.0\refint\Api.Service.Contract.dll
+C:\Users\pauli\Desktop\Learning\dotnet\CourseSite\Api.Service.Contract\obj\Debug\net6.0\Api.Service.Contract.pdb
+C:\Users\pauli\Desktop\Learning\dotnet\CourseSite\Api.Service.Contract\obj\Debug\net6.0\ref\Api.Service.Contract.dll
