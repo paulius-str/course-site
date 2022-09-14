@@ -22,15 +22,16 @@ namespace Api.Repository
 
             using var command = new MySqlCommand($"SELECT * FROM `user` WHERE email = '{emailAddress}'", _connection);
             using var reader = await command.ExecuteReaderAsync();
+            bool result = false;
 
             while (await reader.ReadAsync())
             {
-                return true;
+                result = true;
             }
 
             await _connection.CloseAsync();
 
-            return false;
+            return result;
         }
 
 
