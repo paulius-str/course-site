@@ -25,6 +25,6 @@ export class NewElementViewComponent implements OnInit {
 
     });
 
-    this.activeModal.close();
+    this.activeModal.close(this.element);
   }
 }

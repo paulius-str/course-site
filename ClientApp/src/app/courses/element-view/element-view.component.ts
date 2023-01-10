@@ -45,8 +45,9 @@ export class ElementViewComponent implements OnInit {
       this.elementContent = response;
 
       var videoUrl = this.elementContent.videoContent.videoUrl;
+      this.videoUrl = "";
 
-      if(videoUrl != null){
+      if(videoUrl){
         this.videoUrl = videoUrl;
         this.selectVideo();
       }

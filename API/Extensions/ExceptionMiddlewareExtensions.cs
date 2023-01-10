@@ -22,6 +22,8 @@ namespace API.Extensions
                         context.Response.StatusCode = contextFeature.Error switch
                         {
                             NotFoundException => StatusCodes.Status404NotFound,
+                            UnauthorizedException => StatusCodes.Status401Unauthorized,
+                            UserAlreadyExistException => StatusCodes.Status400BadRequest,
                             _ => StatusCodes.Status500InternalServerError
                         };
 

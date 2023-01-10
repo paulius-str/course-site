@@ -20,7 +20,7 @@ export class NewSectionViewComponent implements OnInit {
 
   createSection(){
     this.courseService.createSection(this.section).subscribe(response => {
-
+      return this.section;
     });
 
     this.activeModal.close();

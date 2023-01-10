@@ -15,6 +15,7 @@ export class CourseComponent implements OnInit {
   @Input() owned: boolean = false;
   @Input() editMode: boolean = false;
   baseUrl: string = environment.baseUrl;
+  showBasket: boolean = true;
 
   constructor(private basketService: BasketService, public coursesService: CoursesService, public authService: AuthService) { }
 
@@ -24,6 +25,7 @@ export class CourseComponent implements OnInit {
 
   addToBasket(){
     this.basketService.addToBasket(this.course);
+    this.showBasket = false;
   }
 
   deleteCourse(){

@@ -12,7 +12,7 @@ namespace Api.Repository
 
         public CourseRepository(MySqlConnection connection)
         {
-            this._connection = connection;
+            _connection = connection;
         }
 
         public async Task<IEnumerable<Course>> GetAllPublishedCourses()

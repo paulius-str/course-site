@@ -4,6 +4,7 @@ using Api.Contract;
 using Microsoft.AspNetCore.Mvc;
 using Api.Shared.DataTransferObjects;
 using Api.Service.Contract;
+using API.Attributes;
 
 namespace API.Controllers
 {
@@ -33,6 +34,7 @@ namespace API.Controllers
         }
 
         [HttpPost("{courseId}/{userId}")]
+        [Auth]
         public async Task<ActionResult<RatingDto>> AddOrUpdateRating(RatingForCreationDto rating, int courseId, int userId)
         {
             var result = await _serviceManager.RatingService.AddOrUpdateRatingAsync(rating, courseId, userId);

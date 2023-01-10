@@ -3,5 +3,6 @@ export interface IUser{
     emailAddress: string,
     firstName: string,
     lastName: string,
-    isPublisher?: boolean
+    isPublisher?: boolean,
+    IsAdmin?: boolean
 }

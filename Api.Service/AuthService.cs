@@ -4,6 +4,7 @@ using Api.Entities.Exceptions;
 using Api.Service.Contract;
 using Api.Shared;
 using AutoMapper;
+using Microsoft.AspNetCore.Http;
 using Microsoft.Extensions.Configuration;
 using Microsoft.IdentityModel.Tokens;
 using System;
@@ -29,18 +30,26 @@ namespace Api.Service
             _config = config;
         }
 
-        public async Task<bool> RegisterAsync(UserForRegisterDto userForRegisterDto)
+        public async Task<string> RegisterAsync(UserForRegisterDto userForRegisterDto)
         {
             var user = _mapper.Map<User>(userForRegisterDto);
             if (await _repositoryManager.AuthRepository.CheckIfUserExists(userForRegisterDto.EmailAddress))
                 throw new UserAlreadyExistException(user);
 
+           
             var result = await _repositoryManager.AuthRepository.Register(userForRegisterDto);
+            UserForLoginDto loginInfo = null;
 
-            return result;
+            if (result)
+            {
+                loginInfo = _mapper.Map<UserForLoginDto>(userForRegisterDto);
+                return await LoginAsync(loginInfo);
+            }
+
+            return null;
         }
 
-        public async Task<SecurityToken> LoginAsync(UserForLoginDto userForLoginDto)
+        public async Task<string> LoginAsync(UserForLoginDto userForLoginDto)
         {
             var userFromRepo = await _repositoryManager.AuthRepository.Login(userForLoginDto);
 
@@ -56,7 +65,7 @@ namespace Api.Service
             };
 
             var key = new SymmetricSecurityKey(Encoding.UTF8
-                .GetBytes(_config.GetSection("AppSettings:Token").Value));
+                .GetBytes(_config.GetSection("Jwt:Key").Value));
 
             var creds = new SigningCredentials(key, SecurityAlgorithms.HmacSha512Signature);
 
@@ -70,8 +79,25 @@ namespace Api.Service
             var tokenHandler = new JwtSecurityTokenHandler();
 
             var token = tokenHandler.CreateToken(tokenDescriptor);
+            var tokenString = tokenHandler.WriteToken(token);
 
-            return token;
+            return tokenString;
         }
+
+        public async Task AuthorizeOwner(UserDto user, int courseId)
+        {
+            var courses = await _repositoryManager.CourseRepository.GetUserCourses(user.Id);
+            var publishedCourses = await _repositoryManager.CourseRepository.GetAuthorUserCourses(user.Id);
+            List<Course> userCourses = courses.ToList();
+            userCourses.AddRange(publishedCourses);
+            Course? course = null;
+
+            if (courses != null)
+                course = courses.FirstOrDefault(x => x.Id == courseId);
+
+            if (course == null)
+                throw new UnauthorizedException();
+        }
+
     }
 }

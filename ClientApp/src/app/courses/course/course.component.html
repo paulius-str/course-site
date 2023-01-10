@@ -14,7 +14,7 @@
             
             <div class="d-flex justify-content-between">
               <p class="card-text"><small class="text-muted">{{course.price}}$</small></p>
-              <button *ngIf="!owned && authService.appUser" (click)="addToBasket()" class="btn-primary">Add to basket</button>
+              <button *ngIf="!owned && authService.appUser && showBasket" (click)="addToBasket()" class="btn-primary">Add to basket</button>
             </div>
             
             <!-- <button *ngIf="editMode" (click)="deleteCourse()" class="btn-danger">Delete Course</button> -->

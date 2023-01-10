@@ -105,7 +105,9 @@ export class CourseViewComponent implements OnInit {
     modalRef.componentInstance.name = 'Create Section';
     modalRef.componentInstance.courseId = this.course.id;
     modalRef.closed.subscribe(response => {
-      this.ngOnInit();
+      setTimeout(() => {
+       this.ngOnInit();
+     }, 500);
     });   
   }
 

@@ -1,7 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { RouterModule } from '@angular/router';
 
 import { AppComponent } from './app.component';
@@ -34,6 +34,7 @@ import { CreateEditRatingViewComponent } from './ratings/create-edit-rating-view
 import { QuestionComponent } from './discussion/question/question.component';
 import { QuestionViewComponent } from './discussion/question-view/question-view.component';
 import { AnswerComponent } from './discussion/answer/answer.component';
+import { JwtInterceptor } from './util/jwt-interceptor';
 
 export function tokenGetter(){
   return localStorage.getItem('token');
@@ -98,7 +99,7 @@ export function tokenGetter(){
     
   ],
   providers: [
-    
+    { provide: HTTP_INTERCEPTORS, useClass: JwtInterceptor, multi: true }
   ],
   bootstrap: [AppComponent]
 })

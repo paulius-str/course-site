@@ -10,7 +10,7 @@ import { CoursesService } from '../../courses.service';
   styleUrls: ['./new-course-creation-view.component.css']
 })
 export class NewCourseCreationViewComponent implements OnInit {
-  course: ICourseForCreationDto = {userId: "", courseName: "", courseDescription: "", coursePrice: 0};
+  course: ICourseForCreationDto = {userId: "", name: "", description: "", price: 0};
 
   constructor(public activeModal: NgbActiveModal, private coursesService: CoursesService) { }
   
@@ -21,7 +21,7 @@ export class NewCourseCreationViewComponent implements OnInit {
 
   createCourse(){
     this.coursesService.createCourse(this.course).subscribe(response => {
-      
+      return this.course;
     });
 
     this.activeModal.close();

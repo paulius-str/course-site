@@ -10,6 +10,7 @@ import { FormsModule } from '@angular/forms';
 export class LoginComponent implements OnInit {
   email: string = "";
   password: string = "";
+  showError: boolean = false;
 
   constructor(private authService: AuthService) { }
 
@@ -17,6 +18,8 @@ export class LoginComponent implements OnInit {
   }
 
   login(){
-    this.authService.login({emailAddress: this.email, password: this.password});
+    var result = this.authService.login({emailAddress: this.email, password: this.password});
+    if(result == null)
+    this.showError = true;
   }
 }

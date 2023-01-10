@@ -38,7 +38,8 @@
         <input type="password" class="form-control">
       </div>   
       <div class="mt-5">
-        <button style="width: 100%;" class="my-5" type="submit" class="btn btn-primary">Sign Up</button>
+        <label *ngIf="showError" for="register" class="form-label text-danger">Incorrect data</label>
+        <button id="register" style="width: 100%;" class="my-5" type="submit" class="btn btn-primary">Sign Up</button>
       </div>
       <div class="mt-2">
         <p>Already have an account? <a routerLink="/login">Sign In</a></p> 

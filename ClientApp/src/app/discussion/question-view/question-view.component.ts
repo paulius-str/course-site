@@ -28,6 +28,7 @@ export class QuestionViewComponent implements OnInit {
   }
 
   createAnswer(){
+    console.log(this.question)
     if(this.question.id){
       this.discussionService.createAnswer(this.newAnswer, this.question.id).subscribe(response => {
         this.ngOnInit();

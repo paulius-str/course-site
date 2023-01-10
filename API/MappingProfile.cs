@@ -1,5 +1,6 @@
 ﻿using Api.Entities;
 using Api.Entities.CourseEntities;
+using Api.Entities.Discussion;
 using Api.Entities.Ratings;
 using Api.Service;
 using Api.Shared;
@@ -14,6 +15,7 @@ namespace API
         {
             CreateMap<UserDto, User>().ReverseMap();
             CreateMap<UserForRegisterDto, User>();
+            CreateMap<UserForRegisterDto, UserForLoginDto>();
             CreateMap<UserForLoginDto, User>();
             CreateMap<CourseDto, Course>().ReverseMap();
             CreateMap<CourseForCreationDto, Course>();
@@ -25,12 +27,16 @@ namespace API
             CreateMap<CourseSectionForCreationDto, CourseSection>();
             CreateMap<CourseSectionForUpdateDto, CourseSection>();
             CreateMap<RatingDto, Rating>().ReverseMap();
+            CreateMap<QuestionForCreationDto, Question>().ReverseMap();
+            CreateMap<Question, QuestionDto>().ReverseMap();
+            CreateMap<AnswerForCreationDto, Answer>().ReverseMap();
+            CreateMap<AnswerDto, Answer>().ReverseMap();
             CreateMap<RatingForCreationDto, Rating>();
             CreateMap<CourseElementDto, CourseElement>().ReverseMap();
             CreateMap<CourseElementForCreationDto, CourseElement>();
             CreateMap<CourseElementForUpdateDto, CourseElement>();
             CreateMap<CourseElementArticleContentDto, CourseElementArticleContent>().ReverseMap();
-            CreateMap<CourseElementVideoContentDto, CourseElementVideoContentDto>().ReverseMap();
+            CreateMap<CourseElementVideoContentDto, CourseElementVideoContent>().ReverseMap();
         }
     }
 }

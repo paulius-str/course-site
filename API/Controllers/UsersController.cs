@@ -4,6 +4,7 @@ using Api.Contract;
 using Microsoft.AspNetCore.Mvc;
 using System.Security.Claims;
 using Api.Service.Contract;
+using API.Attributes;
 
 namespace API.Controllers
 {
@@ -19,19 +20,18 @@ namespace API.Controllers
         [HttpGet("{userId}")]
         public async Task<IActionResult> GetUser(int userId)
         {
-            if(User.Identity == null) return Unauthorized();
-
             var result = await _serviceManager.UserService.GetUserAsync(userId);
 
-            return Ok(new {success = result});
+            return Ok(result);
         } 
 
         [HttpPost("makepublisher/{userId}")]
+        [Auth]
         public async Task<IActionResult> MakePublisher(int userId)
         {
             bool result = await _serviceManager.UserService.MakePublisherAsync(userId);
 
-            return Ok(new {success = result});
+            return Ok(result);
         }
     }
 }

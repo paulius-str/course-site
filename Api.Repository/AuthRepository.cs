@@ -214,7 +214,6 @@ namespace Api.Repository
             command.ExecuteNonQuery();
 
             await _connection.CloseAsync();
-            //using var reader = await command.ExecuteReaderAsync();
 
             var user = await GetUser(userRegisterDto.EmailAddress);
 

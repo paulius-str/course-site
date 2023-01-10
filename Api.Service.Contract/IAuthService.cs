@@ -10,7 +10,8 @@ namespace Api.Service.Contract
 {
     public interface IAuthService
     {
-        Task<bool> RegisterAsync(UserForRegisterDto userForRegisterDto);
-        Task<SecurityToken> LoginAsync(UserForLoginDto userForLoginDto);
+        Task<string> RegisterAsync(UserForRegisterDto userForRegisterDto);
+        Task<string> LoginAsync(UserForLoginDto userForLoginDto);
+        Task AuthorizeOwner(UserDto user, int courseId);
     }
 }

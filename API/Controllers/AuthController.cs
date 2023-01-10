@@ -22,9 +22,9 @@ namespace API.Controllers
         [HttpPost("register")]
         public async Task<IActionResult> Register(UserForRegisterDto userForRegisterDto)
         {
-            var result = await _serviceManager.AuthService.RegisterAsync(userForRegisterDto);
+            var token = await _serviceManager.AuthService.RegisterAsync(userForRegisterDto);
 
-            return Ok(new {success = result});
+            return Ok(new { token = token });
         }
 
         [HttpPost("login")]
@@ -32,7 +32,7 @@ namespace API.Controllers
         {
             var token = await _serviceManager.AuthService.LoginAsync(userForLoginDto);
 
-            return Ok(new {token = token});
+            return Ok(new { token = token });
         }
     }
 }

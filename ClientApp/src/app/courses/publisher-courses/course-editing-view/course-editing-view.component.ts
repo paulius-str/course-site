@@ -59,7 +59,10 @@ export class CourseEditingViewComponent implements OnInit {
     modalRef.componentInstance.name = 'Create Section';
     
     modalRef.closed.subscribe(response => {
-     this.ngOnInit();
+      this.sections.push(response);
+      setTimeout(() => {
+        this.ngOnInit();
+     }, 250);
     });   
   }
 
@@ -69,18 +72,17 @@ export class CourseEditingViewComponent implements OnInit {
     modalRef.componentInstance.sectionId = sectionId;
 
     modalRef.closed.subscribe(response => {
-      this.ngOnInit();
+      this.sectionsWithElements.forEach(sectionWithElements => {
+        if(sectionWithElements.section.id == modalRef.componentInstance.sectionId)
+          sectionWithElements.elements.push(response);
+      });
     });  
   }
 
   openEditElementView(element: ICourseElement){
     const modalRef = this.modalService.open(EditElementViewComponent);
     modalRef.componentInstance.name = 'Create Element';
-    modalRef.componentInstance.element = element;
-
-    modalRef.closed.subscribe(response => {
-      this.ngOnInit();
-    });  
+    modalRef.componentInstance.element = element; 
   }
 
   publishCourse(){
@@ -126,12 +128,31 @@ export class CourseEditingViewComponent implements OnInit {
   }
 
   deleteSection(sectionId?: string){
-    if(sectionId)
+    if(sectionId){
       this.coursesService.deleteSection(sectionId).subscribe(response => {});
+      var section = this.sections.find(x => x.id == sectionId);
+      if(section != null){
+        const index = this.sections.indexOf(section, 0);
+        if (index > -1) {
+          this.sections.splice(index, 1);
+        }
+      }
+    }
+    
+    setTimeout(() => {
+      this.ngOnInit();
+    }, 75);
   }
 
   deleteElement(elementId?: string){
-    if(elementId)
-      this.coursesService.deleteElement(elementId).subscribe(response => {});
+    if(elementId){
+      this.coursesService.deleteElement(elementId).subscribe(response => {
+
+      });
+    }
+    
+    setTimeout(() => {
+      this.ngOnInit();
+    }, 75);
   }
 }

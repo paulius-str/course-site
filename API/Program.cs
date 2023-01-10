@@ -1,25 +1,20 @@
-using Api.Repository;
-using Api.Contract;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.IdentityModel.Tokens;
 using MySqlConnector;
 using System.Text;
 using API.Extensions;
-using AutoMapper;
+using API.JwtMiddleware;
 
 var builder = WebApplication.CreateBuilder(args);
 
-// Add services to the container.
 builder.Services.AddControllersWithViews();
 builder.Services.AddTransient<MySqlConnection>(_ => new MySqlConnection(
     builder.Configuration.GetConnectionString("Default")
     ));
 
-//builder.Services.AddAutoMapper(typeof(Program));
 builder.Services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
-//builder.Services.AddMapper();
 builder.Services.AddRepository();
 builder.Services.AddServices();
 
@@ -37,13 +32,17 @@ builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme).AddJw
 {
     options.TokenValidationParameters = new TokenValidationParameters
     {
-        ValidateIssuerSigningKey = true,
-        IssuerSigningKey = new SymmetricSecurityKey(Encoding.ASCII
-            .GetBytes(builder.Configuration.GetSection("AppSettings:Token").Value)),
+        ValidIssuer = builder.Configuration.GetSection("Jwt:Issuer").Value,
+        ValidAudience = builder.Configuration.GetSection("Jwt:Audience").Value,
+        IssuerSigningKey = new SymmetricSecurityKey
+        (Encoding.UTF8.GetBytes(builder.Configuration.GetSection("Jwt:Key").Value)),
         ValidateIssuer = false,
-        ValidateAudience = false
+        ValidateAudience = false,
+        ValidateLifetime = false,
+        ValidateIssuerSigningKey = true
     };
 });
+
 
 var app = builder.Build();
 
@@ -63,9 +62,11 @@ if (!app.Environment.IsDevelopment())
 
 }
 
-app.UseHttpsRedirection();
+app.UseMiddleware<JwtMiddleware>();
+//app.UseHttpsRedirection();
 app.UseStaticFiles();
 app.UseRouting();
+//app.UseAuthorization();
 
 app.UseCors("CorsPolicy");
 
@@ -73,6 +74,6 @@ app.MapControllerRoute(
     name: "default",
     pattern: "{controller}/{action=Index}/{id?}");
 
-app.MapFallbackToFile("index.html");;
+app.MapFallbackToFile("index.html");
 
 app.Run();

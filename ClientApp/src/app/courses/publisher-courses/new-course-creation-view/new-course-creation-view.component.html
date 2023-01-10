@@ -2,13 +2,13 @@
     <div class="form-group my-3 mx-3">
 
       <label>Course Name:</label>
-      <input  [(ngModel)]="course.courseName" name="name" type="text" class="form-control" id="courseName" placeholder="Name">   
+      <input  [(ngModel)]="course.name" name="name" type="text" class="form-control" id="courseName" placeholder="Name">   
 
       <label class="mt-3">Description:</label>
-      <input  [(ngModel)]="course.courseDescription" name="description" type="text" class="form-control" id="courseName" placeholder="Description">   
+      <input  [(ngModel)]="course.description" name="description" type="text" class="form-control" id="courseName" placeholder="Description">   
 
       <label class="mt-3">Price:</label>
-      <input  [(ngModel)]="course.coursePrice" name="price" type="text" class="form-control" id="courseName" placeholder="Price">   
+      <input  [(ngModel)]="course.price" name="price" type="text" class="form-control" id="courseName" placeholder="Price">   
 
       <div class="d-flex justify-content-center mt-4">
         <button (click)="createCourse()" type="submit" class="btn btn-primary">Create</button>

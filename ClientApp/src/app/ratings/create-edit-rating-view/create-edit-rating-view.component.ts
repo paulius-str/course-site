@@ -23,7 +23,6 @@ export class CreateEditRatingViewComponent implements OnInit {
   submit(){
     this.activeModal.close();
     this.ratingService.addRating(this.rating, this.coursesService.selectedCourse.id).subscribe(response => {
-
     });
   }
 }

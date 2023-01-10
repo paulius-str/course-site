@@ -6,16 +6,24 @@ using Microsoft.AspNetCore.Mvc;
 using System.Security.Claims;
 using Api.Shared.DataTransferObjects;
 using Api.Service.Contract;
+using Microsoft.AspNetCore.Authorization;
+using Microsoft.IdentityModel.Tokens;
+using System.IdentityModel.Tokens.Jwt;
+using System.Text;
+using API.Attributes;
+using Api.Entities.Exceptions;
 
 namespace API.Controllers
 {
     public class CoursesController : BaseApiController
     {
         private readonly IServiceManager _serviceManager;
+        private readonly IConfiguration _config;
 
-        public CoursesController(IServiceManager serviceManager)
+        public CoursesController(IServiceManager serviceManager, IConfiguration config)
         {
             _serviceManager = serviceManager;
+            _config = config;
         }
 
         [HttpGet]
@@ -27,6 +35,7 @@ namespace API.Controllers
         }
 
         [HttpGet("user/{userid}")]
+        [Auth]
         public async Task<ActionResult<IReadOnlyList<CourseDto>>> GetUserCourses(int userId)
         {
             var result = await _serviceManager.CourseService.GetAllUserCoursesAsync(userId);
@@ -43,19 +52,21 @@ namespace API.Controllers
         }
 
         [HttpPost("published")]
+        [Auth]
         public async Task<ActionResult> PublishCourse(CourseDto course)
         {
             var result = await _serviceManager.CourseService.CreatePublishedCourseAsync(course);
 
-            return Ok(new {success = result});
+            return Ok(result);
         }
 
         [HttpDelete("published/{courseId}")]
+        [Auth]
         public async Task<IActionResult> UnpublishCourse(int courseId)
         {
             var result = await _serviceManager.CourseService.RemovePublishedCourseAsync(courseId);
 
-            return Ok(new {success = result});
+            return Ok(result);
         }
 
         [HttpGet("{courseId}/sections")]
@@ -76,14 +87,16 @@ namespace API.Controllers
         }
 
         [HttpGet("elements/content/{elementId}")]
+        [Auth]
         public async Task<ActionResult<ElementContentDto>> GetElementContent(int elementId)
         {
-            var result = _serviceManager.CourseService.GetElementContentAsync(elementId);
+            var result = await _serviceManager.CourseService.GetElementContentAsync(elementId);
 
             return Ok(result);
         }
 
         [HttpPost("elements/content/{elementId}")]
+        [Auth]
         public async Task<ActionResult> SetElementContent([FromBody]ElementContentDto elementContent, [FromRoute]int elementId)
         {
             var result = await _serviceManager.CourseService.CreateOrUpdateElementContentAsync(elementContent, elementId);     
@@ -108,6 +121,7 @@ namespace API.Controllers
         }
 
         [HttpGet("elements/completed/{userId}/{courseId}")]
+        [Auth]
         public async Task<ActionResult<IReadOnlyList<CourseElementDto>>> GetCompletedElements(int userId, int courseId)
         {
             var result = await _serviceManager.CourseService.GetCompletedCourseElementsAsync(userId, courseId);
@@ -116,6 +130,7 @@ namespace API.Controllers
         }
 
         [HttpPost]
+        [Auth]
         public async Task<ActionResult<CourseDto>> CreateCourse(CourseForCreationDto course)
         {
             var result = await _serviceManager.CourseService.CreateCourseAsync(course);
@@ -124,6 +139,7 @@ namespace API.Controllers
         }
 
         [HttpPut]
+        [Auth]
         public async Task<ActionResult<CourseDto>> UpdateCourse(CourseForUpdateDto course)
         {
             var result = await _serviceManager.CourseService.UpdateCourseAsync(course);
@@ -133,6 +149,7 @@ namespace API.Controllers
 
 
         [HttpDelete("{courseId}")]
+        [Auth]
         public async Task<ActionResult> DeleteCourse(int courseId)
         {
             var result = await _serviceManager.CourseService.DeleteCourseAsync(courseId);
@@ -141,6 +158,7 @@ namespace API.Controllers
         }
 
         [HttpPost("sections")]
+        [Auth]
         public async Task<ActionResult<CourseSectionDto>> CreateSection(CourseSectionForCreationDto section)
         {
             var result = await _serviceManager.CourseService.CreateSectionAsync(section);
@@ -149,6 +167,7 @@ namespace API.Controllers
         }
 
         [HttpPut("sections")]
+        [Auth]
         public async Task<ActionResult<CourseSectionDto>> UpdateSection(CourseSectionForUpdateDto section)
         {
             var result = await _serviceManager.CourseService.UpdateSectionAsync(section);
@@ -157,6 +176,7 @@ namespace API.Controllers
         }
 
         [HttpDelete("sections/{sectionId}")]
+        [Auth]
         public async Task<ActionResult> DeleteSection(int sectionId)
         {
             var result = await _serviceManager.CourseService.DeleteSectionAsync(sectionId);
@@ -165,6 +185,7 @@ namespace API.Controllers
         }
 
         [HttpPost("elements")]
+        [Auth]
         public async Task<ActionResult<CourseElementDto>> CreateElement(CourseElementForCreationDto element)
         {
             var result = await _serviceManager.CourseService.CreateElementAsync(element);
@@ -173,6 +194,7 @@ namespace API.Controllers
         }
 
         [HttpPut("elements/{elementId}")]
+        [Auth]
         public async Task<ActionResult<CourseElementDto>> EditElement(CourseElementForUpdateDto element)
         {
             var result = await _serviceManager.CourseService.UpdateElementAsync(element);
@@ -182,6 +204,7 @@ namespace API.Controllers
 
 
         [HttpDelete("elements/{elementId}")]
+        [Auth]
         public async Task<ActionResult> DeleteElement(CourseElementDto element)
         {
             var result = await _serviceManager.CourseService.DeleteElementAsync(element.Id);
@@ -190,19 +213,21 @@ namespace API.Controllers
         }
 
         [HttpPost("elements/completed/{userId}")]
+        [Auth]
         public async Task<ActionResult> AddCompletedElementForUser(CourseElementDto element, int userId)
         {
             var result = await _serviceManager.CourseService.AddCompletedElementForUserAsync(element, userId);
 
-            return Ok(new {success = result});
+            return Ok(result);
         }
 
         [HttpPost("purchased/{userId}")]
+        [Auth]
         public async Task<ActionResult<CourseElementDto>> AddPurchasedCourseForUser(CourseDto course, int userId)
         {
             var result = await _serviceManager.CourseService.AddPurchasedCourseForUserAsync(course, userId);
 
-            return Ok(new {success = result});
+            return Ok(result);
         }
     }
 }

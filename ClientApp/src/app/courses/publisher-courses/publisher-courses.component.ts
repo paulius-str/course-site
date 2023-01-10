@@ -24,7 +24,11 @@ export class PublisherCoursesComponent implements OnInit {
     modalRef.componentInstance.name = 'Create course';
     
     modalRef.closed.subscribe(response => {
-      this.getCourses();
+      this.courses.push(response);
+      setTimeout(() => {
+        this.ngOnInit();
+     }, 500);
+      console.log("modal closed");
     });
     
   }
@@ -32,8 +36,12 @@ export class PublisherCoursesComponent implements OnInit {
   getCourses(){
     this.coursesService.getPublisherCourses().subscribe(response => {
       this.courses = response;
+      console.log("got course");
+      console.log(this.courses.length);
     }, error => {
       console.log(error);
     });
   }
+
+  
 }

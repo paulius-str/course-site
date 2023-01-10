@@ -27,18 +27,24 @@ export class AuthService {
   
   login(loginDto: ILoginDto){
     console.log(loginDto);
-    return this.http.post<ITokenResponse>(environment.baseUrl + 'auth/login', loginDto).subscribe(response => {
+    this.http.post<ITokenResponse>(environment.baseUrl + 'auth/login', loginDto).subscribe(response => {
         localStorage.setItem('token', response.token);
         this.token = response.token;
         this.appUser = this.jwtHelper.decodeToken<IUser>(response.token);
-        this.appUser = this.readClaims();
+        //this.appUser = this.readClaims();
         this.router.navigate(['/']);
         this.notifierService.notify('success', 'Logged In!');
 
-        this.getUser();
+        if(this.token){
+          this.appUser = this.readClaims();
+          this.getUser();
+        }
 
-    }, error => {
+        return(this.token);
+
+    }, error => {   
         console.log(error);
+        return null;
     });
   }
 
@@ -64,8 +70,20 @@ export class AuthService {
 
   register(registerDto: IUserRegisterDto){
     console.log(registerDto)
-    return this.http.post<ITokenResponse>(environment.baseUrl + 'auth/register', registerDto).subscribe(response => {
-      console.log(registerDto);
+    this.http.post<ITokenResponse>(environment.baseUrl + 'auth/register', registerDto).subscribe(response => {
+      localStorage.setItem('token', response.token);
+        this.token = response.token;
+        this.appUser = this.jwtHelper.decodeToken<IUser>(response.token);
+        //this.appUser = this.readClaims();
+        this.router.navigate(['/']);
+        this.notifierService.notify('success', 'Logged In!');
+
+        if(this.token){
+          this.appUser = this.readClaims();
+          this.getUser();
+        }
+
+        return(this.token);
   }, error => {
       console.log(error);
   });
